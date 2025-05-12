@@ -1,38 +1,33 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 3.10)
 project(gimpsep-gimpers)
 
-# Trouver OpenCV
+# Recherche des librairies OpenCV
 find_package(OpenCV REQUIRED)
 
-# Répertoire des ressources
-set(IMAGES_DIR "${CMAKE_SOURCE_DIR}/images")
-set(VIDEOS_DIR "${CMAKE_SOURCE_DIR}/videos")
+# Répertoires de ressources
 set(CASCADES_DIR "${CMAKE_SOURCE_DIR}/cascades")
-# testnewcheckout
-# Sources du module "Islam"
-set(STITCHING_SRC src/stitching.cpp)
-set(FACE_RECOGNITION_SRC src/face_recognition.cpp)
+set(IMAGES_DIR   "${CMAKE_SOURCE_DIR}/images")
 
-# Exécutables
-add_executable(panorama ${STITCHING_SRC})
-add_executable(face_recognition ${FACE_RECOGNITION_SRC})
+# Sources
+set(STITCHING_SRC        src/stitching.cpp)
+set(FACE_REC_SRC         src/face_recognition.cpp)
+set(MAIN_SRC             src/main.cpp)
 
-add_custom_target(run_panorama
-        COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/panorama
-        ${CMAKE_SOURCE_DIR}/images/van_gogh.jpg
-        ${CMAKE_SOURCE_DIR}/images/another.jpg
-        DEPENDS panorama
-        WORKING_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
-)
+# Création des exécutables
+add_executable(panorama         ${STITCHING_SRC})
+add_executable(face_recognition ${FACE_REC_SRC})
+add_executable(image_editor     ${MAIN_SRC})
 
-
-# Lier OpenCV
-target_link_libraries(panorama PRIVATE ${OpenCV_LIBS})
+# Liaison avec OpenCV
+target_link_libraries(panorama         PRIVATE ${OpenCV_LIBS})
 target_link_libraries(face_recognition PRIVATE ${OpenCV_LIBS})
+target_link_libraries(image_editor     PRIVATE ${OpenCV_LIBS})
 
-# Standards C++
+# Standard C++
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Répertoire de sortie des exécutables
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+# Répertoire de sortie
+set_target_properties(panorama face_recognition image_editor PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
