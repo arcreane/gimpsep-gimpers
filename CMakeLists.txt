@@ -8,7 +8,7 @@ find_package(OpenCV REQUIRED)
 set(IMAGES_DIR "${CMAKE_SOURCE_DIR}/images")
 set(VIDEOS_DIR "${CMAKE_SOURCE_DIR}/videos")
 set(CASCADES_DIR "${CMAKE_SOURCE_DIR}/cascades")
-
+# testnewcheckout
 # Sources du module "Islam"
 set(STITCHING_SRC src/stitching.cpp)
 set(FACE_RECOGNITION_SRC src/face_recognition.cpp)
