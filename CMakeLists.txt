@@ -27,9 +27,9 @@ set(COMMON_SRC
     src/EdgeDetector.cpp
 )
 
-add_executable(panorama src/stitching.cpp "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp")
-add_executable(face_recognition src/face_recognition.cpp ${COMMON_SRC} "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp")
-add_executable(image_editor src/main.cpp ${COMMON_SRC} "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp")
+add_executable(panorama src/stitching.cpp "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp" "src/BackgroundSubtractor.h" "src/BackgroundSubtractor.cpp")
+add_executable(face_recognition src/face_recognition.cpp ${COMMON_SRC} "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp" "src/BackgroundSubtractor.h" "src/BackgroundSubtractor.cpp")
+add_executable(image_editor src/main.cpp ${COMMON_SRC} "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp" "src/BackgroundSubtractor.h" "src/BackgroundSubtractor.cpp")
 
 target_link_libraries(panorama PRIVATE ${OpenCV_LIBS})
 target_link_libraries(face_recognition PRIVATE ${OpenCV_LIBS})

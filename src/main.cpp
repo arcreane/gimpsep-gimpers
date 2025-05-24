@@ -6,6 +6,7 @@
 #include "EdgeDetector.h"
 #include "MorphologyProcessor.h"
 #include "ResizeProcessor.h"
+#include "BackgroundSubtractor.h"
 
 // === MENU PRINTING ===
 void printMenu() {
@@ -16,6 +17,7 @@ void printMenu() {
     std::cout << "4. Canny Edge Detection\n";
     std::cout << "5. Morphology Operations\n";
     std::cout << "6. Resize Image\n";
+    std::cout << "7. Background Separation (Video)\n";
     std::cout << "0. Exit\n";
     std::cout << "Choice: ";
 }
@@ -174,6 +176,19 @@ void resizeImage() {
     pauseAndReturn();
 }
 
+// === OPTION 7: SEPARATE BACKGROUND ===
+void separateBackground() {
+    std::string videoPath, outputPath;
+
+    std::cout << "Path to input video: ";
+    std::cin >> videoPath;
+    std::cout << "Path to save output video: ";
+    std::cin >> outputPath;
+
+    BackgroundSubtractor::processVideo(videoPath, outputPath);
+    pauseAndReturn();
+}
+
 // === MAIN LOOP ===
 int main() {
     int choice = -1;
@@ -208,6 +223,9 @@ int main() {
             break;
         case 6:
             resizeImage();
+            break;
+        case 7:
+            separateBackground();
             break;
         case 0:
             std::cout << "Goodbye!" << std::endl;
