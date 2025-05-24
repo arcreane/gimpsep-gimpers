@@ -1,42 +1,46 @@
 cmake_minimum_required(VERSION 3.10)
 project(gimpsep-gimpers)
 
-# C++ Standard
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Find OpenCV
-find_package(OpenCV REQUIRED)
+if(MSVC)
+    add_compile_options(/W4 /WX)
+endif()
 
-# Include path for .h files in src/
-include_directories(src)
+set(OpenCV_DIR "C:/opencv/build/x64/vc16/lib")
+find_package(OpenCV REQUIRED 
+    COMPONENTS core imgproc highgui imgcodecs
+)
+ 
+include_directories(
+    src
+    ${OpenCV_INCLUDE_DIRS}
+)
 
-# Resources
 set(CASCADES_DIR "${CMAKE_SOURCE_DIR}/cascades")
 set(IMAGES_DIR   "${CMAKE_SOURCE_DIR}/images")
 
-# Shared logic source files
 set(COMMON_SRC
-        src/BrightnessProcessor.cpp
-        src/EdgeDetector.cpp
+    src/BrightnessProcessor.cpp
+    src/EdgeDetector.cpp
 )
 
-# Sources for each binary
-set(STITCHING_SRC        src/stitching.cpp)
-set(FACE_REC_SRC         src/face_recognition.cpp ${COMMON_SRC})
-set(MAIN_SRC             src/main.cpp ${COMMON_SRC})
+add_executable(panorama src/stitching.cpp "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp")
+add_executable(face_recognition src/face_recognition.cpp ${COMMON_SRC} "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp")
+add_executable(image_editor src/main.cpp ${COMMON_SRC} "src/MorphologyProcessor.cpp" "src/ResizeProcessor.cpp")
 
-# Executables
-add_executable(panorama         ${STITCHING_SRC})
-add_executable(face_recognition ${FACE_REC_SRC})
-add_executable(image_editor     ${MAIN_SRC})
-
-# Link with OpenCV
-target_link_libraries(panorama         PRIVATE ${OpenCV_LIBS})
+target_link_libraries(panorama PRIVATE ${OpenCV_LIBS})
 target_link_libraries(face_recognition PRIVATE ${OpenCV_LIBS})
-target_link_libraries(image_editor     PRIVATE ${OpenCV_LIBS})
+target_link_libraries(image_editor PRIVATE ${OpenCV_LIBS})
 
-# Output path
-set_target_properties(panorama face_recognition image_editor PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+
+if(WIN32)
+    add_custom_command(TARGET panorama POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+            "${OpenCV_DIR}/../bin/opencv_world${OpenCV_VERSION_MAJOR}${OpenCV_VERSION_MINOR}${OpenCV_VERSION_PATCH}.dll"
+            ${EXECUTABLE_OUTPUT_PATH}
+    )
+endif()
