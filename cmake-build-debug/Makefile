@@ -359,6 +359,60 @@ src/core/EdgeDetector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.s
 .PHONY : src/core/EdgeDetector.cpp.s
 
+src/core/MorphologyProcessor.o: src/core/MorphologyProcessor.cpp.o
+.PHONY : src/core/MorphologyProcessor.o
+
+# target to build an object file
+src/core/MorphologyProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o
+.PHONY : src/core/MorphologyProcessor.cpp.o
+
+src/core/MorphologyProcessor.i: src/core/MorphologyProcessor.cpp.i
+.PHONY : src/core/MorphologyProcessor.i
+
+# target to preprocess a source file
+src/core/MorphologyProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.i
+.PHONY : src/core/MorphologyProcessor.cpp.i
+
+src/core/MorphologyProcessor.s: src/core/MorphologyProcessor.cpp.s
+.PHONY : src/core/MorphologyProcessor.s
+
+# target to generate assembly for a file
+src/core/MorphologyProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.s
+.PHONY : src/core/MorphologyProcessor.cpp.s
+
+src/core/ResizeProcessor.o: src/core/ResizeProcessor.cpp.o
+.PHONY : src/core/ResizeProcessor.o
+
+# target to build an object file
+src/core/ResizeProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o
+.PHONY : src/core/ResizeProcessor.cpp.o
+
+src/core/ResizeProcessor.i: src/core/ResizeProcessor.cpp.i
+.PHONY : src/core/ResizeProcessor.i
+
+# target to preprocess a source file
+src/core/ResizeProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.i
+.PHONY : src/core/ResizeProcessor.cpp.i
+
+src/core/ResizeProcessor.s: src/core/ResizeProcessor.cpp.s
+.PHONY : src/core/ResizeProcessor.s
+
+# target to generate assembly for a file
+src/core/ResizeProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.s
+.PHONY : src/core/ResizeProcessor.cpp.s
+
 src/face_recognition.o: src/face_recognition.cpp.o
 .PHONY : src/face_recognition.o
 
@@ -487,6 +541,12 @@ help:
 	@echo "... src/core/EdgeDetector.o"
 	@echo "... src/core/EdgeDetector.i"
 	@echo "... src/core/EdgeDetector.s"
+	@echo "... src/core/MorphologyProcessor.o"
+	@echo "... src/core/MorphologyProcessor.i"
+	@echo "... src/core/MorphologyProcessor.s"
+	@echo "... src/core/ResizeProcessor.o"
+	@echo "... src/core/ResizeProcessor.i"
+	@echo "... src/core/ResizeProcessor.s"
 	@echo "... src/face_recognition.o"
 	@echo "... src/face_recognition.i"
 	@echo "... src/face_recognition.s"

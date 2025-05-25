@@ -433,6 +433,10 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src",
+		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include",
+		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core",
+		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui",
 		"/opt/homebrew/lib/QtWidgets.framework/Headers",
 		"/opt/homebrew/lib/QtWidgets.framework",
 		"/opt/homebrew/lib/QtCore.framework/Headers",
@@ -441,9 +445,6 @@
 		"/opt/homebrew/lib/QtGui.framework",
 		"/opt/homebrew/lib/QtDBus.framework/Headers",
 		"/opt/homebrew/lib/QtDBus.framework",
-		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src",
-		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include",
-		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui",
 		"/opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4",
 		"/usr/local/include",
 		"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1",
@@ -465,7 +466,7 @@
 	"MOC_PREDEFS_CMD" : 
 	[
 		"/usr/bin/c++",
-		"-std=gnu++11",
+		"-std=c++17",
 		"-dM",
 		"-E",
 		"-c",

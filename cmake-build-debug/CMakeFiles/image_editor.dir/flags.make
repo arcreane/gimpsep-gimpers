@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/image_editor_autogen/include -I/opt/homebrew/lib/QtDBus.framework/Headers -iframework /opt/homebrew/lib -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui -isystem /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4 -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include
+CXX_INCLUDES = -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/image_editor_autogen/include -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui -I/opt/homebrew/lib/QtDBus.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4 -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/lib/QtGui.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include
 
-CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
+CXX_FLAGSarm64 = -std=c++17 -arch arm64
 
-CXX_FLAGS = -std=gnu++17 -arch arm64
+CXX_FLAGS = -std=c++17 -arch arm64
 

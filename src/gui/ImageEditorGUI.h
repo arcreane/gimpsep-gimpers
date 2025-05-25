@@ -4,18 +4,13 @@
 #ifndef IMAGEEDITORGUI_H
 #define IMAGEEDITORGUI_H
 
-#pragma once
-
 #include <QMainWindow>
-#include <QPushButton>
 #include <QLabel>
-#include <QImage>
+#include <QSlider>
+#include <QPushButton>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QSlider>
-#include <QFileDialog>
 #include <QScrollArea>
-#include <QStatusBar>
 #include <opencv2/opencv.hpp>
 
 class ImageEditorGUI : public QMainWindow {
@@ -28,22 +23,28 @@ private slots:
     void loadImage();
     void saveImage();
     void adjustBrightness(int value);
-    void detectEdges();
+    void detectEdges(int value);
+    void applyMorphology();
+    void resizeImage();
 
 private:
-    QLabel* imageLabel;
-    QSlider* brightnessSlider;
-    QPushButton* saveButton;
-    QPushButton* edgeButton;
-
-    cv::Mat originalImage;
-    cv::Mat currentImage;
-
     void updateDisplay(const cv::Mat& image);
     QImage cvMatToQImage(const cv::Mat& mat);
     void updateControls(bool enable);
+
+    QLabel* imageLabel;
+    QLabel* placeholderText;
+    QPushButton* saveButton;
+    QPushButton* morphologyButton;
+    QPushButton* resizeButton;
+    QSlider* brightnessSlider;
+    QSlider* cannySlider;
+
+    cv::Mat originalImage;
+    cv::Mat currentImage;
 };
 
 #endif // IMAGEEDITORGUI_H
+
 
 

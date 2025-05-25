@@ -12,6 +12,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/image_editor_autogen/mocs_compilation.cpp" "CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilation.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp" "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp" "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o.d"
+  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp" "CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o.d"
+  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp" "CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.cpp" "CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/main.cpp" "CMakeFiles/image_editor.dir/src/main.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/main.cpp.o.d"
   )

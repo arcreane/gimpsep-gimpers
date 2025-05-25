@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/panorama_autogen/include -I/opt/homebrew/lib/QtWidgets.framework/Headers -F/opt/homebrew/lib -I/opt/homebrew/lib/QtCore.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtDBus.framework/Headers -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui -isystem /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4
+CXX_INCLUDES = -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/panorama_autogen/include -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core -I/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui -I/opt/homebrew/lib/QtWidgets.framework/Headers -F/opt/homebrew/lib -I/opt/homebrew/lib/QtCore.framework/Headers -I/opt/homebrew/lib/QtGui.framework/Headers -I/opt/homebrew/lib/QtDBus.framework/Headers -isystem /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4
 
-CXX_FLAGSarm64 = -std=gnu++11 -arch arm64
+CXX_FLAGSarm64 = -std=c++17 -arch arm64
 
-CXX_FLAGS = -std=gnu++11 -arch arm64
+CXX_FLAGS = -std=c++17 -arch arm64
 

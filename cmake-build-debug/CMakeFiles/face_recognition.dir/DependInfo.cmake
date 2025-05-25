@@ -12,6 +12,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/face_recognition_autogen/mocs_compilation.cpp" "CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp" "CMakeFiles/face_recognition.dir/src/core/BrightnessProcessor.cpp.o" "gcc" "CMakeFiles/face_recognition.dir/src/core/BrightnessProcessor.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp" "CMakeFiles/face_recognition.dir/src/core/EdgeDetector.cpp.o" "gcc" "CMakeFiles/face_recognition.dir/src/core/EdgeDetector.cpp.o.d"
+  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp" "CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.o" "gcc" "CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.o.d"
+  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp" "CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.o" "gcc" "CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/face_recognition.cpp" "CMakeFiles/face_recognition.dir/src/face_recognition.cpp.o" "gcc" "CMakeFiles/face_recognition.dir/src/face_recognition.cpp.o.d"
   )
 

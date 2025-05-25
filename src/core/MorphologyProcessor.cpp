@@ -1,4 +1,4 @@
-#include "../MorphologyProcessor.h"
+#include "../include/MorphologyProcessor.h"
 
 cv::Mat MorphologyProcessor::applyDilation(const cv::Mat& input, int kernelSize) {
     cv::Mat result;

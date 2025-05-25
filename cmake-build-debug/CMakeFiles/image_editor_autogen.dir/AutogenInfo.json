@@ -441,11 +441,12 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/opt/homebrew/lib/QtDBus.framework/Headers",
-		"/opt/homebrew/lib/QtDBus.framework",
 		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src",
 		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include",
+		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core",
 		"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui",
+		"/opt/homebrew/lib/QtDBus.framework/Headers",
+		"/opt/homebrew/lib/QtDBus.framework",
 		"/opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4",
 		"/opt/homebrew/lib/QtWidgets.framework/Headers",
 		"/opt/homebrew/lib/QtWidgets.framework",
@@ -475,7 +476,7 @@
 	"MOC_PREDEFS_CMD" : 
 	[
 		"/usr/bin/c++",
-		"-std=gnu++17",
+		"-std=c++17",
 		"-dM",
 		"-E",
 		"-c",
@@ -505,6 +506,16 @@
 		],
 		[
 			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp",
 			"MU",
 			null
 		],

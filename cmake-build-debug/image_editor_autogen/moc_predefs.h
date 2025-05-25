@@ -147,8 +147,6 @@
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_2 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1
 #define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_8 1
-#define __GLIBCXX_BITSIZE_INT_N_0 128
-#define __GLIBCXX_TYPE_INT_N_0 __int128
 #define __GNUC_GNU_INLINE__ 1
 #define __GNUC_MINOR__ 2
 #define __GNUC_PATCHLEVEL__ 1
@@ -305,6 +303,7 @@
 #define __STDC_UTF_16__ 1
 #define __STDC_UTF_32__ 1
 #define __STDC__ 1
+#define __STRICT_ANSI__ 1
 #define __UINT16_C_SUFFIX__ 
 #define __UINT16_FMTX__ "hX"
 #define __UINT16_FMTo__ "ho"

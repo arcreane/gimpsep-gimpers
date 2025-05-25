@@ -44,7 +44,10 @@ template <> constexpr inline auto ImageEditorGUI::qt_create_metaobjectdata<qt_me
         "",
         "saveImage",
         "adjustBrightness",
-        "detectEdges"
+        "value",
+        "detectEdges",
+        "applyMorphology",
+        "resizeImage"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -53,9 +56,17 @@ template <> constexpr inline auto ImageEditorGUI::qt_create_metaobjectdata<qt_me
         // Slot 'saveImage'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'adjustBrightness'
-        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void(int)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 5 },
+        }}),
         // Slot 'detectEdges'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void(int)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Int, 5 },
+        }}),
+        // Slot 'applyMorphology'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'resizeImage'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -81,12 +92,13 @@ void ImageEditorGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: _t->loadImage(); break;
         case 1: _t->saveImage(); break;
-        case 2: _t->adjustBrightness(); break;
-        case 3: _t->detectEdges(); break;
+        case 2: _t->adjustBrightness((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 3: _t->detectEdges((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 4: _t->applyMorphology(); break;
+        case 5: _t->resizeImage(); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *ImageEditorGUI::metaObject() const
@@ -108,14 +120,14 @@ int ImageEditorGUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 6;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 6)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 4;
+        _id -= 6;
     }
     return _id;
 }

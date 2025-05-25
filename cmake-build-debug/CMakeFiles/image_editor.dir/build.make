@@ -135,10 +135,38 @@ CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp -o CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.s
 
+CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o: CMakeFiles/image_editor.dir/flags.make
+CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp
+CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o: CMakeFiles/image_editor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o -MF CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o.d -o CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp
+
+CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp > CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.i
+
+CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp -o CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.s
+
+CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o: CMakeFiles/image_editor.dir/flags.make
+CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp
+CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o: CMakeFiles/image_editor.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o -MF CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o.d -o CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp
+
+CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp > CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.i
+
+CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp -o CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.s
+
 CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: CMakeFiles/image_editor.dir/flags.make
 CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.cpp
 CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: CMakeFiles/image_editor.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o -MF CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o.d -o CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.cpp
 
 CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.i: cmake_force
@@ -155,6 +183,8 @@ image_editor_OBJECTS = \
 "CMakeFiles/image_editor.dir/src/main.cpp.o" \
 "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o" \
 "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o" \
+"CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o" \
+"CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o" \
 "CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o"
 
 # External object files for target image_editor
@@ -164,69 +194,20 @@ bin/image_editor: CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilat
 bin/image_editor: CMakeFiles/image_editor.dir/src/main.cpp.o
 bin/image_editor: CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o
 bin/image_editor: CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o
+bin/image_editor: CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.o
+bin/image_editor: CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o
 bin/image_editor: CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o
 bin/image_editor: CMakeFiles/image_editor.dir/build.make
-bin/image_editor: /opt/homebrew/lib/libopencv_gapi.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_stitching.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_alphamat.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_aruco.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_bgsegm.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_bioinspired.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_ccalib.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_dnn_objdetect.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_dnn_superres.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_dpm.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_face.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_freetype.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_fuzzy.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_hfs.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_img_hash.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_intensity_transform.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_line_descriptor.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_mcc.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_quality.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_rapid.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_reg.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_rgbd.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_saliency.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_sfm.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_signal.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_stereo.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_structured_light.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_superres.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_surface_matching.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_tracking.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_videostab.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_viz.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_wechat_qrcode.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_xfeatures2d.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_xobjdetect.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_xphoto.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
-bin/image_editor: /opt/homebrew/lib/libopencv_shape.4.11.0.dylib
 bin/image_editor: /opt/homebrew/lib/libopencv_highgui.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_datasets.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_plot.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_text.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_ml.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_phase_unwrapping.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_optflow.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_ximgproc.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_video.4.11.0.dylib
+bin/image_editor: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
 bin/image_editor: /opt/homebrew/lib/libopencv_videoio.4.11.0.dylib
 bin/image_editor: /opt/homebrew/lib/libopencv_imgcodecs.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_objdetect.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_calib3d.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_dnn.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_features2d.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_flann.4.11.0.dylib
-bin/image_editor: /opt/homebrew/lib/libopencv_photo.4.11.0.dylib
 bin/image_editor: /opt/homebrew/lib/libopencv_imgproc.4.11.0.dylib
 bin/image_editor: /opt/homebrew/lib/libopencv_core.4.11.0.dylib
 bin/image_editor: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
 bin/image_editor: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 bin/image_editor: CMakeFiles/image_editor.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bin/image_editor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable bin/image_editor"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/image_editor.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

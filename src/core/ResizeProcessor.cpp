@@ -1,4 +1,4 @@
-#include "../ResizeProcessor.h"
+#include "../include/ResizeProcessor.h"
 
 cv::Mat ResizeProcessor::resizeImage(const cv::Mat& input, int width, int height) {
     cv::Mat result;

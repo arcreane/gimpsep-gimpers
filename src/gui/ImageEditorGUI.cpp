@@ -2,65 +2,110 @@
 // Created by Ines Mansour on 25/05/2025.
 //
 #include "ImageEditorGUI.h"
-#include "../include/BrightnessProcessor.h"
 
+#include "../include/BrightnessProcessor.h"
 #include "../include/EdgeDetector.h"
+#include "../include/MorphologyProcessor.h"
+#include "../include/ResizeProcessor.h"
 
 #include <QFileDialog>
-#include <QImage>
 #include <QPixmap>
-#include <QDebug>
+#include <QScrollArea>
+#include <QStatusBar>
+#include <QInputDialog>
+#include <QMessageBox>
 
 ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
-    // Main container
+    setWindowTitle("Image Editor - Gimpsep Gimpers");
+    resize(1000, 700);
+
     QWidget* centralWidget = new QWidget(this);
-    QVBoxLayout* mainLayout = new QVBoxLayout(centralWidget);
+    QHBoxLayout* mainLayout = new QHBoxLayout(centralWidget);
+    QVBoxLayout* sidePanel = new QVBoxLayout();
+    sidePanel->setSpacing(15);
 
-    // Image display
-    imageLabel = new QLabel("No image loaded");
+    // === Image Display ===
+    imageLabel = new QLabel;
     imageLabel->setAlignment(Qt::AlignCenter);
-    mainLayout->addWidget(imageLabel);
+    imageLabel->setMinimumSize(600, 400);
 
-    // Buttons
-    QPushButton* loadButton = new QPushButton("Open Image");
-    QPushButton* saveButton = new QPushButton("Save Image");
-    QPushButton* edgeButton = new QPushButton("Canny Edge Detection");
+    QScrollArea* scrollArea = new QScrollArea;
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setWidget(imageLabel);
 
-    brightnessSlider = new QSlider(Qt::Horizontal);
-    brightnessSlider->setMinimum(-100);
-    brightnessSlider->setMaximum(100);
-    brightnessSlider->setValue(0);
+    placeholderText = new QLabel("Please import your image using the 'Open' button.");
+    placeholderText->setAlignment(Qt::AlignCenter);
+    placeholderText->setStyleSheet("color: gray; font-size: 16px;");
+    imageLabel->setLayout(new QVBoxLayout);
+    imageLabel->layout()->addWidget(placeholderText);
 
-    // Button layout
-    QHBoxLayout* buttonLayout = new QHBoxLayout;
-    buttonLayout->addWidget(loadButton);
-    buttonLayout->addWidget(saveButton);
-    buttonLayout->addWidget(new QLabel("Brightness:"));
-    buttonLayout->addWidget(brightnessSlider);
-    buttonLayout->addWidget(edgeButton);
-    mainLayout->addLayout(buttonLayout);
-
+    mainLayout->addWidget(scrollArea);
+    mainLayout->addLayout(sidePanel);
     setCentralWidget(centralWidget);
 
-    // Connections
+    // === Buttons and Controls ===
+    QPushButton* loadButton = new QPushButton("Open");
+    saveButton = new QPushButton("Save");
+    morphologyButton = new QPushButton("Morphology");
+    resizeButton = new QPushButton("Resize");
+
+    saveButton->setEnabled(false);
+    morphologyButton->setEnabled(false);
+    resizeButton->setEnabled(false);
+
+    brightnessSlider = new QSlider(Qt::Horizontal);
+    brightnessSlider->setRange(-100, 100);
+    brightnessSlider->setValue(0);
+    brightnessSlider->setEnabled(false);
+
+    QLabel* brightnessLabel = new QLabel("Brightness");
+
+    cannySlider = new QSlider(Qt::Horizontal);
+    cannySlider->setRange(0, 255);
+    cannySlider->setValue(100);
+    cannySlider->setEnabled(false);
+    QLabel* cannyLabel = new QLabel("Canny Edge");
+
+    sidePanel->addWidget(loadButton);
+    sidePanel->addWidget(saveButton);
+    sidePanel->addSpacing(20);
+    sidePanel->addWidget(brightnessLabel);
+    sidePanel->addWidget(brightnessSlider);
+    sidePanel->addWidget(cannyLabel);
+    sidePanel->addWidget(cannySlider);
+    sidePanel->addSpacing(20);
+    sidePanel->addWidget(morphologyButton);
+    sidePanel->addWidget(resizeButton);
+    sidePanel->addStretch();
+
+    statusBar()->showMessage("Ready");
+
+    // === Connections ===
     connect(loadButton, &QPushButton::clicked, this, &ImageEditorGUI::loadImage);
     connect(saveButton, &QPushButton::clicked, this, &ImageEditorGUI::saveImage);
     connect(brightnessSlider, &QSlider::valueChanged, this, &ImageEditorGUI::adjustBrightness);
-    connect(edgeButton, &QPushButton::clicked, this, &ImageEditorGUI::detectEdges);
+    connect(cannySlider, &QSlider::valueChanged, this, &ImageEditorGUI::detectEdges);
+    connect(morphologyButton, &QPushButton::clicked, this, &ImageEditorGUI::applyMorphology);
+    connect(resizeButton, &QPushButton::clicked, this, &ImageEditorGUI::resizeImage);
 }
 
 void ImageEditorGUI::loadImage() {
-    QString fileName = QFileDialog::getOpenFileName(this, "Open Image", "", "Images (*.png *.jpg *.bmp)");
+    QString fileName = QFileDialog::getOpenFileName(this, "Open Image", "", "Images (*.png *.jpg *.jpeg *.bmp)");
     if (fileName.isEmpty()) return;
 
     originalImage = cv::imread(fileName.toStdString());
     if (originalImage.empty()) {
-        qWarning() << "Failed to load image!";
+        statusBar()->showMessage("Failed to load image");
         return;
     }
 
     currentImage = originalImage.clone();
+    brightnessSlider->setValue(0);
+    cannySlider->setValue(100);
     updateDisplay(currentImage);
+    updateControls(true);
+    placeholderText->hide();
+    statusBar()->showMessage("Image loaded");
 }
 
 void ImageEditorGUI::saveImage() {
@@ -69,23 +114,56 @@ void ImageEditorGUI::saveImage() {
     QString fileName = QFileDialog::getSaveFileName(this, "Save Image", "", "Images (*.png *.jpg)");
     if (!fileName.isEmpty()) {
         cv::imwrite(fileName.toStdString(), currentImage);
+        statusBar()->showMessage("Image saved: " + fileName);
     }
 }
 
-void ImageEditorGUI::adjustBrightness() {
+void ImageEditorGUI::adjustBrightness(int value) {
     if (originalImage.empty()) return;
-
-    double brightnessValue = brightnessSlider->value();
-    currentImage = BrightnessProcessor::adjustBrightness(originalImage, brightnessValue);
+    currentImage = BrightnessProcessor::adjustBrightness(originalImage, value);
     updateDisplay(currentImage);
 }
 
-void ImageEditorGUI::detectEdges() {
+void ImageEditorGUI::detectEdges(int threshold) {
+    if (originalImage.empty()) return;
+    cv::Mat result = EdgeDetector::detectEdges(originalImage, threshold, threshold * 3);
+    currentImage = result.clone();
+    updateDisplay(result);
+    statusBar()->showMessage("Canny edge detection applied");
+}
+
+void ImageEditorGUI::applyMorphology() {
     if (currentImage.empty()) return;
 
-    cv::Mat edges = EdgeDetector::detectEdges(currentImage, 50, 150);
-    updateDisplay(edges);
-    currentImage = edges;
+    bool ok;
+    int op = QInputDialog::getInt(this, "Morphology", "Operation (1: Dilation, 2: Erosion):", 1, 1, 2, 1, &ok);
+    if (!ok) return;
+
+    int size = QInputDialog::getInt(this, "Kernel Size", "Enter odd kernel size (e.g., 3, 5, 7):", 3, 1, 99, 2, &ok);
+    if (!ok) return;
+
+    cv::Mat result = (op == 1)
+        ? MorphologyProcessor::applyDilation(currentImage, size)
+        : MorphologyProcessor::applyErosion(currentImage, size);
+
+    currentImage = result;
+    updateDisplay(result);
+    statusBar()->showMessage("Morphological operation applied");
+}
+
+void ImageEditorGUI::resizeImage() {
+    if (currentImage.empty()) return;
+
+    bool ok;
+    int width = QInputDialog::getInt(this, "Resize", "New width:", currentImage.cols, 1, 10000, 1, &ok);
+    if (!ok) return;
+    int height = QInputDialog::getInt(this, "Resize", "New height:", currentImage.rows, 1, 10000, 1, &ok);
+    if (!ok) return;
+
+    cv::Mat result = ResizeProcessor::resizeImage(currentImage, width, height);
+    currentImage = result;
+    updateDisplay(result);
+    statusBar()->showMessage("Image resized");
 }
 
 void ImageEditorGUI::updateDisplay(const cv::Mat& image) {
@@ -104,4 +182,12 @@ QImage ImageEditorGUI::cvMatToQImage(const cv::Mat& mat) {
     } else {
         return QImage();
     }
+}
+
+void ImageEditorGUI::updateControls(bool enable) {
+    saveButton->setEnabled(enable);
+    brightnessSlider->setEnabled(enable);
+    cannySlider->setEnabled(enable);
+    morphologyButton->setEnabled(enable);
+    resizeButton->setEnabled(enable);
 }
