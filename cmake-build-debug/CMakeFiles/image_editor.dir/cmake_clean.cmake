@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "image_editor_autogen"
   "CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.o"
+  "CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.o.d"
   "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o"
   "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o.d"
   "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o"

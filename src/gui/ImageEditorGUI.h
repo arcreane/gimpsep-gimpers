@@ -26,6 +26,8 @@ private slots:
     void detectEdges(int value);
     void applyMorphology();
     void resizeImage();
+    void runBackgroundSubtraction();
+
 
 private:
     void updateDisplay(const cv::Mat& image);
@@ -39,6 +41,8 @@ private:
     QPushButton* resizeButton;
     QSlider* brightnessSlider;
     QSlider* cannySlider;
+    QPushButton* backgroundButton;
+
 
     cv::Mat originalImage;
     cv::Mat currentImage;

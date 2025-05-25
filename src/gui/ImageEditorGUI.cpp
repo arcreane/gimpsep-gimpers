@@ -1,12 +1,10 @@
-//
-// Created by Ines Mansour on 25/05/2025.
-//
 #include "ImageEditorGUI.h"
 
 #include "../include/BrightnessProcessor.h"
 #include "../include/EdgeDetector.h"
 #include "../include/MorphologyProcessor.h"
 #include "../include/ResizeProcessor.h"
+#include "../include/BackgroundSubtractor.h"
 
 #include <QFileDialog>
 #include <QPixmap>
@@ -48,6 +46,7 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     saveButton = new QPushButton("Save");
     morphologyButton = new QPushButton("Morphology");
     resizeButton = new QPushButton("Resize");
+    backgroundButton = new QPushButton("Background Subtraction");
 
     saveButton->setEnabled(false);
     morphologyButton->setEnabled(false);
@@ -76,6 +75,7 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     sidePanel->addSpacing(20);
     sidePanel->addWidget(morphologyButton);
     sidePanel->addWidget(resizeButton);
+    sidePanel->addWidget(backgroundButton);
     sidePanel->addStretch();
 
     statusBar()->showMessage("Ready");
@@ -87,6 +87,7 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     connect(cannySlider, &QSlider::valueChanged, this, &ImageEditorGUI::detectEdges);
     connect(morphologyButton, &QPushButton::clicked, this, &ImageEditorGUI::applyMorphology);
     connect(resizeButton, &QPushButton::clicked, this, &ImageEditorGUI::resizeImage);
+    connect(backgroundButton, &QPushButton::clicked, this, &ImageEditorGUI::runBackgroundSubtraction);
 }
 
 void ImageEditorGUI::loadImage() {
@@ -164,6 +165,17 @@ void ImageEditorGUI::resizeImage() {
     currentImage = result;
     updateDisplay(result);
     statusBar()->showMessage("Image resized");
+}
+
+void ImageEditorGUI::runBackgroundSubtraction() {
+    QString inputPath = QFileDialog::getOpenFileName(this, "Open Video", "", "Videos (*.mp4 *.avi *.mov)");
+    if (inputPath.isEmpty()) return;
+
+    QString outputPath = QFileDialog::getSaveFileName(this, "Save Output Video", "", "AVI Video (*.avi)");
+    if (outputPath.isEmpty()) return;
+
+    BackgroundSubtractor::processVideo(inputPath.toStdString(), outputPath.toStdString());
+    statusBar()->showMessage("Background subtraction completed. Output saved.");
 }
 
 void ImageEditorGUI::updateDisplay(const cv::Mat& image) {

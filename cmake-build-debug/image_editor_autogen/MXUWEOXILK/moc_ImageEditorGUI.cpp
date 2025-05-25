@@ -47,7 +47,8 @@ template <> constexpr inline auto ImageEditorGUI::qt_create_metaobjectdata<qt_me
         "value",
         "detectEdges",
         "applyMorphology",
-        "resizeImage"
+        "resizeImage",
+        "runBackgroundSubtraction"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -67,6 +68,8 @@ template <> constexpr inline auto ImageEditorGUI::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'resizeImage'
         QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'runBackgroundSubtraction'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -96,6 +99,7 @@ void ImageEditorGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 3: _t->detectEdges((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 4: _t->applyMorphology(); break;
         case 5: _t->resizeImage(); break;
+        case 6: _t->runBackgroundSubtraction(); break;
         default: ;
         }
     }
@@ -120,14 +124,14 @@ int ImageEditorGUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

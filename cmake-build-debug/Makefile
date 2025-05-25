@@ -305,6 +305,33 @@ panorama_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.s
 .PHONY : panorama_autogen/mocs_compilation.cpp.s
 
+src/core/BackgroundSubtractor.o: src/core/BackgroundSubtractor.cpp.o
+.PHONY : src/core/BackgroundSubtractor.o
+
+# target to build an object file
+src/core/BackgroundSubtractor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.o
+.PHONY : src/core/BackgroundSubtractor.cpp.o
+
+src/core/BackgroundSubtractor.i: src/core/BackgroundSubtractor.cpp.i
+.PHONY : src/core/BackgroundSubtractor.i
+
+# target to preprocess a source file
+src/core/BackgroundSubtractor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.i
+.PHONY : src/core/BackgroundSubtractor.cpp.i
+
+src/core/BackgroundSubtractor.s: src/core/BackgroundSubtractor.cpp.s
+.PHONY : src/core/BackgroundSubtractor.s
+
+# target to generate assembly for a file
+src/core/BackgroundSubtractor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.s
+.PHONY : src/core/BackgroundSubtractor.cpp.s
+
 src/core/BrightnessProcessor.o: src/core/BrightnessProcessor.cpp.o
 .PHONY : src/core/BrightnessProcessor.o
 
@@ -413,29 +440,53 @@ src/core/ResizeProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.s
 .PHONY : src/core/ResizeProcessor.cpp.s
 
-src/face_recognition.o: src/face_recognition.cpp.o
-.PHONY : src/face_recognition.o
+src/core/face_recognition.o: src/core/face_recognition.cpp.o
+.PHONY : src/core/face_recognition.o
 
 # target to build an object file
-src/face_recognition.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/face_recognition.cpp.o
-.PHONY : src/face_recognition.cpp.o
+src/core/face_recognition.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o
+.PHONY : src/core/face_recognition.cpp.o
 
-src/face_recognition.i: src/face_recognition.cpp.i
-.PHONY : src/face_recognition.i
+src/core/face_recognition.i: src/core/face_recognition.cpp.i
+.PHONY : src/core/face_recognition.i
 
 # target to preprocess a source file
-src/face_recognition.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/face_recognition.cpp.i
-.PHONY : src/face_recognition.cpp.i
+src/core/face_recognition.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.i
+.PHONY : src/core/face_recognition.cpp.i
 
-src/face_recognition.s: src/face_recognition.cpp.s
-.PHONY : src/face_recognition.s
+src/core/face_recognition.s: src/core/face_recognition.cpp.s
+.PHONY : src/core/face_recognition.s
 
 # target to generate assembly for a file
-src/face_recognition.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/face_recognition.cpp.s
-.PHONY : src/face_recognition.cpp.s
+src/core/face_recognition.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.s
+.PHONY : src/core/face_recognition.cpp.s
+
+src/core/stitching.o: src/core/stitching.cpp.o
+.PHONY : src/core/stitching.o
+
+# target to build an object file
+src/core/stitching.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/stitching.cpp.o
+.PHONY : src/core/stitching.cpp.o
+
+src/core/stitching.i: src/core/stitching.cpp.i
+.PHONY : src/core/stitching.i
+
+# target to preprocess a source file
+src/core/stitching.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/stitching.cpp.i
+.PHONY : src/core/stitching.cpp.i
+
+src/core/stitching.s: src/core/stitching.cpp.s
+.PHONY : src/core/stitching.s
+
+# target to generate assembly for a file
+src/core/stitching.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/stitching.cpp.s
+.PHONY : src/core/stitching.cpp.s
 
 src/gui/ImageEditorGUI.o: src/gui/ImageEditorGUI.cpp.o
 .PHONY : src/gui/ImageEditorGUI.o
@@ -485,30 +536,6 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/stitching.o: src/stitching.cpp.o
-.PHONY : src/stitching.o
-
-# target to build an object file
-src/stitching.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/stitching.cpp.o
-.PHONY : src/stitching.cpp.o
-
-src/stitching.i: src/stitching.cpp.i
-.PHONY : src/stitching.i
-
-# target to preprocess a source file
-src/stitching.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/stitching.cpp.i
-.PHONY : src/stitching.cpp.i
-
-src/stitching.s: src/stitching.cpp.s
-.PHONY : src/stitching.s
-
-# target to generate assembly for a file
-src/stitching.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/stitching.cpp.s
-.PHONY : src/stitching.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -535,6 +562,9 @@ help:
 	@echo "... panorama_autogen/mocs_compilation.o"
 	@echo "... panorama_autogen/mocs_compilation.i"
 	@echo "... panorama_autogen/mocs_compilation.s"
+	@echo "... src/core/BackgroundSubtractor.o"
+	@echo "... src/core/BackgroundSubtractor.i"
+	@echo "... src/core/BackgroundSubtractor.s"
 	@echo "... src/core/BrightnessProcessor.o"
 	@echo "... src/core/BrightnessProcessor.i"
 	@echo "... src/core/BrightnessProcessor.s"
@@ -547,18 +577,18 @@ help:
 	@echo "... src/core/ResizeProcessor.o"
 	@echo "... src/core/ResizeProcessor.i"
 	@echo "... src/core/ResizeProcessor.s"
-	@echo "... src/face_recognition.o"
-	@echo "... src/face_recognition.i"
-	@echo "... src/face_recognition.s"
+	@echo "... src/core/face_recognition.o"
+	@echo "... src/core/face_recognition.i"
+	@echo "... src/core/face_recognition.s"
+	@echo "... src/core/stitching.o"
+	@echo "... src/core/stitching.i"
+	@echo "... src/core/stitching.s"
 	@echo "... src/gui/ImageEditorGUI.o"
 	@echo "... src/gui/ImageEditorGUI.i"
 	@echo "... src/gui/ImageEditorGUI.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/stitching.o"
-	@echo "... src/stitching.i"
-	@echo "... src/stitching.s"
 .PHONY : help
 
 

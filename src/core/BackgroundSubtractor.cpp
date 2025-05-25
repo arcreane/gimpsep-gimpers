@@ -1,4 +1,4 @@
-#include "BackgroundSubtractor.h"
+#include "../include/BackgroundSubtractor.h"
 
 void BackgroundSubtractor::processVideo(const std::string& inputPath, const std::string& outputPath) {
     cv::VideoCapture cap(inputPath);

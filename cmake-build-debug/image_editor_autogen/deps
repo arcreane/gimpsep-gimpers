@@ -861,6 +861,7 @@ image_editor_autogen/timestamp: \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/4.0.1/CMakeCXXCompiler.cmake \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/4.0.1/CMakeSystem.cmake \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/image_editor_autogen/moc_predefs.h \
+	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp \

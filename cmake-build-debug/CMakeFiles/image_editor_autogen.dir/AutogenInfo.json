@@ -500,6 +500,11 @@
 	"SOURCES" : 
 	[
 		[
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp",
 			"MU",
 			null

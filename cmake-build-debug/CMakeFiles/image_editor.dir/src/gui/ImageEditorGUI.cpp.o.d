@@ -1223,6 +1223,7 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/EdgeDetector.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/MorphologyProcessor.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/ResizeProcessor.h \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/BackgroundSubtractor.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QFileDialog \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qfiledialog.h \
   /opt/homebrew/include/QtCore/qdir.h \

@@ -93,35 +93,45 @@ CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/panorama_autogen/mocs_compilation.cpp -o CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/panorama.dir/src/stitching.cpp.o: CMakeFiles/panorama.dir/flags.make
-CMakeFiles/panorama.dir/src/stitching.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/stitching.cpp
-CMakeFiles/panorama.dir/src/stitching.cpp.o: CMakeFiles/panorama.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/panorama.dir/src/stitching.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/panorama.dir/src/stitching.cpp.o -MF CMakeFiles/panorama.dir/src/stitching.cpp.o.d -o CMakeFiles/panorama.dir/src/stitching.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/stitching.cpp
+CMakeFiles/panorama.dir/src/core/stitching.cpp.o: CMakeFiles/panorama.dir/flags.make
+CMakeFiles/panorama.dir/src/core/stitching.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/stitching.cpp
+CMakeFiles/panorama.dir/src/core/stitching.cpp.o: CMakeFiles/panorama.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/panorama.dir/src/core/stitching.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/panorama.dir/src/core/stitching.cpp.o -MF CMakeFiles/panorama.dir/src/core/stitching.cpp.o.d -o CMakeFiles/panorama.dir/src/core/stitching.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/stitching.cpp
 
-CMakeFiles/panorama.dir/src/stitching.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/panorama.dir/src/stitching.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/stitching.cpp > CMakeFiles/panorama.dir/src/stitching.cpp.i
+CMakeFiles/panorama.dir/src/core/stitching.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/panorama.dir/src/core/stitching.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/stitching.cpp > CMakeFiles/panorama.dir/src/core/stitching.cpp.i
 
-CMakeFiles/panorama.dir/src/stitching.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/panorama.dir/src/stitching.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/stitching.cpp -o CMakeFiles/panorama.dir/src/stitching.cpp.s
+CMakeFiles/panorama.dir/src/core/stitching.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/panorama.dir/src/core/stitching.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/stitching.cpp -o CMakeFiles/panorama.dir/src/core/stitching.cpp.s
 
 # Object files for target panorama
 panorama_OBJECTS = \
 "CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/panorama.dir/src/stitching.cpp.o"
+"CMakeFiles/panorama.dir/src/core/stitching.cpp.o"
 
 # External object files for target panorama
 panorama_EXTERNAL_OBJECTS =
 
 bin/panorama: CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.o
-bin/panorama: CMakeFiles/panorama.dir/src/stitching.cpp.o
+bin/panorama: CMakeFiles/panorama.dir/src/core/stitching.cpp.o
 bin/panorama: CMakeFiles/panorama.dir/build.make
 bin/panorama: /opt/homebrew/lib/libopencv_highgui.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_video.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_objdetect.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_stitching.4.11.0.dylib
 bin/panorama: /opt/homebrew/lib/libopencv_videoio.4.11.0.dylib
 bin/panorama: /opt/homebrew/lib/libopencv_imgcodecs.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_dnn.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_xfeatures2d.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_ml.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_shape.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_calib3d.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_features2d.4.11.0.dylib
 bin/panorama: /opt/homebrew/lib/libopencv_imgproc.4.11.0.dylib
+bin/panorama: /opt/homebrew/lib/libopencv_flann.4.11.0.dylib
 bin/panorama: /opt/homebrew/lib/libopencv_core.4.11.0.dylib
 bin/panorama: CMakeFiles/panorama.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable bin/panorama"

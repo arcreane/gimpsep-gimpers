@@ -1,6 +1,6 @@
-
 #include <opencv2/opencv.hpp>
 #include <opencv2/objdetect.hpp>
+#include <fstream>
 #include <iostream>
 
 using namespace cv;
@@ -13,11 +13,23 @@ int main(int argc, char** argv) {
     }
 
     string cascadePath = argv[1];
-    string imagePath = argv[2];
+    string imagePath   = argv[2];
+
+    // Vérification de l'existence du fichier cascade
+    ifstream fs(cascadePath);
+    if (!fs.good()) {
+        cerr << "Fichier cascade introuvable: " << cascadePath << endl;
+        return -1;
+    }
 
     CascadeClassifier faceCascade;
-    if (!faceCascade.load(cascadePath)) {
-        cerr << "Erreur de chargement du cascade: " << cascadePath << endl;
+    try {
+        if (!faceCascade.load(cascadePath)) {
+            cerr << "Erreur de chargement du cascade (format invalide?): " << cascadePath << endl;
+            return -1;
+        }
+    } catch (const cv::Exception& e) {
+        cerr << "Exception lors du chargement du cascade: " << e.what() << endl;
         return -1;
     }
 

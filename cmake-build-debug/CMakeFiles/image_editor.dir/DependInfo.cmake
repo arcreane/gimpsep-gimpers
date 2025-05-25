@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "image_editor_autogen/timestamp" "custom" "image_editor_autogen/deps"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/image_editor_autogen/mocs_compilation.cpp" "CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/image_editor.dir/image_editor_autogen/mocs_compilation.cpp.o.d"
+  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp" "CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp" "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp" "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o.d"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp" "CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o" "gcc" "CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.o.d"
