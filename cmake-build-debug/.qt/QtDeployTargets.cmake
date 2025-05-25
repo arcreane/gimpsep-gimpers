@@ -1,0 +1,6 @@
+set(__QT_DEPLOY_TARGET_panorama_FILE /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/bin/panorama)
+set(__QT_DEPLOY_TARGET_panorama_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_face_recognition_FILE /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/bin/face_recognition)
+set(__QT_DEPLOY_TARGET_face_recognition_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_image_editor_FILE /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/bin/image_editor)
+set(__QT_DEPLOY_TARGET_image_editor_TYPE EXECUTABLE)

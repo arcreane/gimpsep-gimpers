@@ -2,8 +2,12 @@
 #include <string>
 #include <limits>
 #include <opencv2/opencv.hpp>
-#include "BrightnessProcessor.h"
-#include "EdgeDetector.h"
+
+#include "../include/BrightnessProcessor.h"
+#include "../include/EdgeDetector.h"
+
+#include <QApplication>
+#include "../gui/ImageEditorGUI.h"
 
 // === MENU PRINTING ===
 void printMenu() {
@@ -12,6 +16,7 @@ void printMenu() {
     std::cout << "2. Face Detection (external)\n";
     std::cout << "3. Adjust Brightness\n";
     std::cout << "4. Canny Edge Detection\n";
+    std::cout << "5. Launch GUI\n";
     std::cout << "0. Exit\n";
     std::cout << "Choice: ";
 }
@@ -106,8 +111,17 @@ void detectEdges() {
     pauseAndReturn();
 }
 
+// === GUI RUNNER (OPTION 5) ===
+void runGUI(int argc, char* argv[]) {
+    QApplication app(argc, argv);
+    ImageEditorGUI window;
+    window.resize(800, 600);
+    window.show();
+    app.exec();
+}
+
 // === MAIN LOOP ===
-int main() {
+int main(int argc, char* argv[]) {
     int choice = -1;
 
     while (true) {
@@ -134,6 +148,9 @@ int main() {
                 break;
             case 4:
                 detectEdges();
+                break;
+            case 5:
+                runGUI(argc, argv);
                 break;
             case 0:
                 std::cout << "Goodbye!" << std::endl;

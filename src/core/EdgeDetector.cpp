@@ -1,8 +1,9 @@
 //
 // Created by Ines Mansour on 19/05/2025.
 //
-#include "EdgeDetector.h"
+#include "../include/EdgeDetector.h"
 #include <opencv2/imgproc.hpp>
+
 
 cv::Mat EdgeDetector::detectEdges(const cv::Mat& image, double threshold1, double threshold2) {
     cv::Mat gray, edges;
@@ -15,3 +16,4 @@ cv::Mat EdgeDetector::detectEdges(const cv::Mat& image, double threshold1, doubl
     cv::Canny(gray, edges, threshold1, threshold2);
     return edges;
 }
+

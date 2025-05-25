@@ -1,7 +1,9 @@
 //
 // Created by Ines Mansour on 19/05/2025.
 //
-#include "BrightnessProcessor.h"
+
+#include "../include/BrightnessProcessor.h"
+
 
 cv::Mat BrightnessProcessor::adjustBrightness(const cv::Mat& image, double brightness) {
     cv::Mat result;

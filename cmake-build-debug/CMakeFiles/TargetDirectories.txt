@@ -1,0 +1,11 @@
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/panorama.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/face_recognition.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/image_editor.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/panorama_autogen_timestamp_deps.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/panorama_autogen.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/face_recognition_autogen_timestamp_deps.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/face_recognition_autogen.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/image_editor_autogen_timestamp_deps.dir
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles/image_editor_autogen.dir
