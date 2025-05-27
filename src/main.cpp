@@ -26,14 +26,24 @@ void pauseAndReturn() {
 
 // === OPTION 1: PANORAMA ===
 void runPanorama() {
-    std::string img1, img2;
-    std::cout << "Path to image 1: ";
-    std::cin >> img1;
-    std::cout << "Path to image 2: ";
-    std::cin >> img2;
-
-    std::string command = "./panorama " + img1 + " " + img2;
-    system(command.c_str());
+    int n;
+    std::cout << "How many images for the panorama? ";
+    std::cin >> n;
+    if (!std::cin || n < 2) {
+        std::cout << "You must enter at least 2 images." << std::endl;
+        pauseAndReturn();
+        return;
+    }
+    std::vector<std::string> paths(n);
+    for (int i = 0; i < n; ++i) {
+        std::cout << "Path to image " << (i + 1) << ": ";
+        std::cin >> paths[i];
+    }
+    std::string cmd = "./panorama";
+    for (const auto &p : paths) {
+        cmd += " " + p;
+    }
+    system(cmd.c_str());
     pauseAndReturn();
 }
 
