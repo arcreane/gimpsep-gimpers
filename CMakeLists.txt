@@ -5,38 +5,25 @@ project(gimpsep-gimpers)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Find OpenCV
-find_package(OpenCV REQUIRED)
+# Find OpenCV (avec stitching pour le panorama)
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui objdetect face stitching)
 
-# Include path for .h files in src/
-include_directories(src)
+# Include path pour vos headers
+include_directories(${CMAKE_SOURCE_DIR}/src)
 
-# Resources
-set(CASCADES_DIR "${CMAKE_SOURCE_DIR}/cascades")
-set(IMAGES_DIR   "${CMAKE_SOURCE_DIR}/images")
-
-# Shared logic source files
+# Sources partagées
 set(COMMON_SRC
         src/BrightnessProcessor.cpp
         src/EdgeDetector.cpp
 )
 
-# Sources for each binary
-set(STITCHING_SRC        src/stitching.cpp)
-set(FACE_REC_SRC         src/face_recognition.cpp ${COMMON_SRC})
-set(MAIN_SRC             src/main.cpp ${COMMON_SRC})
+# Création des exécutables
+add_executable(panorama         src/stitching.cpp)
+add_executable(face_detection   src/face_detection.cpp ${COMMON_SRC})
+add_executable(face_recognition src/face_recognition.cpp)
+add_executable(image_editor     src/main.cpp           ${COMMON_SRC})
 
-# Executables
-add_executable(panorama         ${STITCHING_SRC})
-add_executable(face_recognition ${FACE_REC_SRC})
-add_executable(image_editor     ${MAIN_SRC})
-
-# Link with OpenCV
-target_link_libraries(panorama         PRIVATE ${OpenCV_LIBS})
-target_link_libraries(face_recognition PRIVATE ${OpenCV_LIBS})
-target_link_libraries(image_editor     PRIVATE ${OpenCV_LIBS})
-
-# Output path
-set_target_properties(panorama face_recognition image_editor PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-)
+# Link avec OpenCV
+foreach(t panorama face_detection face_recognition image_editor)
+    target_link_libraries(${t} PRIVATE ${OpenCV_LIBS})
+endforeach()
