@@ -136,12 +136,12 @@ int main(int argc, char** argv)
     double confidence = 0.0;
     model->predict(probe, predicted, confidence);
 
-    // Affichage du résultat
+
     cout << "\n=== Résultat reconnaissance faciale ===\n"
          << "Personne reconnue : " << labelNames[predicted] << "\n"
          << "Confiance (plus bas = meilleure) : " << confidence << "\n\n";
 
-    // Optionnel : afficher l'image de test
+
     imshow("Test", probe);
     waitKey(0);
 
