@@ -23,11 +23,13 @@ int main(int argc, char** argv) {
     }
 
     Ptr<Stitcher> stitcher = Stitcher::create(Stitcher::PANORAMA);
+
     Mat pano;
     Stitcher::Status status = stitcher->stitch(images, pano);
 
     if (status == Stitcher::ERR_NEED_MORE_IMGS) {
-        cerr << "Pas assez de recouvrement détecté, sortie de la première image seule." << endl;
+        // Pas assez de correspondances : retourner la première image
+        cerr << "Pas assez de recouvrement détecté, affichage de la première image." << endl;
         pano = images[0].clone();
     } else if (status != Stitcher::OK) {
         cerr << "Échec du stitching, code erreur = " << int(status) << endl;
