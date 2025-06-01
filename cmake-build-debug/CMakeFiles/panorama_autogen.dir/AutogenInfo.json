@@ -486,7 +486,7 @@
 	"SOURCES" : 
 	[
 		[
-			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/stitching.cpp",
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp",
 			"MU",
 			null
 		]

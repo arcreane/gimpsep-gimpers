@@ -48,7 +48,10 @@ template <> constexpr inline auto ImageEditorGUI::qt_create_metaobjectdata<qt_me
         "detectEdges",
         "applyMorphology",
         "resizeImage",
-        "runBackgroundSubtraction"
+        "runBackgroundSubtraction",
+        "runPanoramaStitching",
+        "runFaceDetection",
+        "runFaceRecognition"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -70,6 +73,12 @@ template <> constexpr inline auto ImageEditorGUI::qt_create_metaobjectdata<qt_me
         QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'runBackgroundSubtraction'
         QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'runPanoramaStitching'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'runFaceDetection'
+        QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'runFaceRecognition'
+        QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -100,6 +109,9 @@ void ImageEditorGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         case 4: _t->applyMorphology(); break;
         case 5: _t->resizeImage(); break;
         case 6: _t->runBackgroundSubtraction(); break;
+        case 7: _t->runPanoramaStitching(); break;
+        case 8: _t->runFaceDetection(); break;
+        case 9: _t->runFaceRecognition(); break;
         default: ;
         }
     }
@@ -124,14 +136,14 @@ int ImageEditorGUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 10;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 7;
+        _id -= 10;
     }
     return _id;
 }

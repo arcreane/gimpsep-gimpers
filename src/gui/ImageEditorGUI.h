@@ -27,7 +27,9 @@ private slots:
     void applyMorphology();
     void resizeImage();
     void runBackgroundSubtraction();
-
+    void runPanoramaStitching();;
+    void runFaceDetection();
+    void runFaceRecognition();
 
 private:
     void updateDisplay(const cv::Mat& image);
@@ -42,7 +44,8 @@ private:
     QSlider* brightnessSlider;
     QSlider* cannySlider;
     QPushButton* backgroundButton;
-
+    QPushButton* panoramaButton;
+    QPushButton* faceDetectionButton;
 
     cv::Mat originalImage;
     cv::Mat currentImage;

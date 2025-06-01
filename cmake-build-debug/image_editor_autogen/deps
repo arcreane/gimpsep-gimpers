@@ -864,7 +864,10 @@ image_editor_autogen/timestamp: \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp \
+	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp \
+	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp \
+	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.cpp \
 	/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.h \

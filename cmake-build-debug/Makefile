@@ -386,6 +386,60 @@ src/core/EdgeDetector.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.s
 .PHONY : src/core/EdgeDetector.cpp.s
 
+src/core/FaceDetectionProcessor.o: src/core/FaceDetectionProcessor.cpp.o
+.PHONY : src/core/FaceDetectionProcessor.o
+
+# target to build an object file
+src/core/FaceDetectionProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/FaceDetectionProcessor.cpp.o
+.PHONY : src/core/FaceDetectionProcessor.cpp.o
+
+src/core/FaceDetectionProcessor.i: src/core/FaceDetectionProcessor.cpp.i
+.PHONY : src/core/FaceDetectionProcessor.i
+
+# target to preprocess a source file
+src/core/FaceDetectionProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/FaceDetectionProcessor.cpp.i
+.PHONY : src/core/FaceDetectionProcessor.cpp.i
+
+src/core/FaceDetectionProcessor.s: src/core/FaceDetectionProcessor.cpp.s
+.PHONY : src/core/FaceDetectionProcessor.s
+
+# target to generate assembly for a file
+src/core/FaceDetectionProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/FaceDetectionProcessor.cpp.s
+.PHONY : src/core/FaceDetectionProcessor.cpp.s
+
+src/core/FaceRecognitionProcessor.o: src/core/FaceRecognitionProcessor.cpp.o
+.PHONY : src/core/FaceRecognitionProcessor.o
+
+# target to build an object file
+src/core/FaceRecognitionProcessor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/FaceRecognitionProcessor.cpp.o
+.PHONY : src/core/FaceRecognitionProcessor.cpp.o
+
+src/core/FaceRecognitionProcessor.i: src/core/FaceRecognitionProcessor.cpp.i
+.PHONY : src/core/FaceRecognitionProcessor.i
+
+# target to preprocess a source file
+src/core/FaceRecognitionProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/FaceRecognitionProcessor.cpp.i
+.PHONY : src/core/FaceRecognitionProcessor.cpp.i
+
+src/core/FaceRecognitionProcessor.s: src/core/FaceRecognitionProcessor.cpp.s
+.PHONY : src/core/FaceRecognitionProcessor.s
+
+# target to generate assembly for a file
+src/core/FaceRecognitionProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/FaceRecognitionProcessor.cpp.s
+.PHONY : src/core/FaceRecognitionProcessor.cpp.s
+
 src/core/MorphologyProcessor.o: src/core/MorphologyProcessor.cpp.o
 .PHONY : src/core/MorphologyProcessor.o
 
@@ -413,6 +467,36 @@ src/core/MorphologyProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/MorphologyProcessor.cpp.s
 .PHONY : src/core/MorphologyProcessor.cpp.s
 
+src/core/PanoramaStitcher.o: src/core/PanoramaStitcher.cpp.o
+.PHONY : src/core/PanoramaStitcher.o
+
+# target to build an object file
+src/core/PanoramaStitcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/PanoramaStitcher.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/PanoramaStitcher.cpp.o
+.PHONY : src/core/PanoramaStitcher.cpp.o
+
+src/core/PanoramaStitcher.i: src/core/PanoramaStitcher.cpp.i
+.PHONY : src/core/PanoramaStitcher.i
+
+# target to preprocess a source file
+src/core/PanoramaStitcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/PanoramaStitcher.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/PanoramaStitcher.cpp.i
+.PHONY : src/core/PanoramaStitcher.cpp.i
+
+src/core/PanoramaStitcher.s: src/core/PanoramaStitcher.cpp.s
+.PHONY : src/core/PanoramaStitcher.s
+
+# target to generate assembly for a file
+src/core/PanoramaStitcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/PanoramaStitcher.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/PanoramaStitcher.cpp.s
+.PHONY : src/core/PanoramaStitcher.cpp.s
+
 src/core/ResizeProcessor.o: src/core/ResizeProcessor.cpp.o
 .PHONY : src/core/ResizeProcessor.o
 
@@ -439,54 +523,6 @@ src/core/ResizeProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ResizeProcessor.cpp.s
 .PHONY : src/core/ResizeProcessor.cpp.s
-
-src/core/face_recognition.o: src/core/face_recognition.cpp.o
-.PHONY : src/core/face_recognition.o
-
-# target to build an object file
-src/core/face_recognition.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o
-.PHONY : src/core/face_recognition.cpp.o
-
-src/core/face_recognition.i: src/core/face_recognition.cpp.i
-.PHONY : src/core/face_recognition.i
-
-# target to preprocess a source file
-src/core/face_recognition.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.i
-.PHONY : src/core/face_recognition.cpp.i
-
-src/core/face_recognition.s: src/core/face_recognition.cpp.s
-.PHONY : src/core/face_recognition.s
-
-# target to generate assembly for a file
-src/core/face_recognition.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.s
-.PHONY : src/core/face_recognition.cpp.s
-
-src/core/stitching.o: src/core/stitching.cpp.o
-.PHONY : src/core/stitching.o
-
-# target to build an object file
-src/core/stitching.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/stitching.cpp.o
-.PHONY : src/core/stitching.cpp.o
-
-src/core/stitching.i: src/core/stitching.cpp.i
-.PHONY : src/core/stitching.i
-
-# target to preprocess a source file
-src/core/stitching.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/stitching.cpp.i
-.PHONY : src/core/stitching.cpp.i
-
-src/core/stitching.s: src/core/stitching.cpp.s
-.PHONY : src/core/stitching.s
-
-# target to generate assembly for a file
-src/core/stitching.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/panorama.dir/build.make CMakeFiles/panorama.dir/src/core/stitching.cpp.s
-.PHONY : src/core/stitching.cpp.s
 
 src/gui/ImageEditorGUI.o: src/gui/ImageEditorGUI.cpp.o
 .PHONY : src/gui/ImageEditorGUI.o
@@ -571,18 +607,21 @@ help:
 	@echo "... src/core/EdgeDetector.o"
 	@echo "... src/core/EdgeDetector.i"
 	@echo "... src/core/EdgeDetector.s"
+	@echo "... src/core/FaceDetectionProcessor.o"
+	@echo "... src/core/FaceDetectionProcessor.i"
+	@echo "... src/core/FaceDetectionProcessor.s"
+	@echo "... src/core/FaceRecognitionProcessor.o"
+	@echo "... src/core/FaceRecognitionProcessor.i"
+	@echo "... src/core/FaceRecognitionProcessor.s"
 	@echo "... src/core/MorphologyProcessor.o"
 	@echo "... src/core/MorphologyProcessor.i"
 	@echo "... src/core/MorphologyProcessor.s"
+	@echo "... src/core/PanoramaStitcher.o"
+	@echo "... src/core/PanoramaStitcher.i"
+	@echo "... src/core/PanoramaStitcher.s"
 	@echo "... src/core/ResizeProcessor.o"
 	@echo "... src/core/ResizeProcessor.i"
 	@echo "... src/core/ResizeProcessor.s"
-	@echo "... src/core/face_recognition.o"
-	@echo "... src/core/face_recognition.i"
-	@echo "... src/core/face_recognition.s"
-	@echo "... src/core/stitching.o"
-	@echo "... src/core/stitching.i"
-	@echo "... src/core/stitching.s"
 	@echo "... src/gui/ImageEditorGUI.o"
 	@echo "... src/gui/ImageEditorGUI.i"
 	@echo "... src/gui/ImageEditorGUI.s"

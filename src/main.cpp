@@ -10,24 +10,30 @@
 #include "../include/MorphologyProcessor.h"
 #include "../include/ResizeProcessor.h"
 #include "../include/BackgroundSubtractor.h"
+#include "../include/FaceRecognitionProcessor.h"
+#include "../include/FaceDetectionProcessor.h"
 
 #include <QApplication>
+
+#include "PanoramaStitcher.h"
 #include "../gui/ImageEditorGUI.h"
 
 // === MENU PRINTING ===
 void printMenu() {
     std::cout << "\n===== Image Editor CLI =====\n";
-    std::cout << "1. Panorama Stitching\n";
-    std::cout << "2. Face Detection\n";
-    std::cout << "3. Adjust Brightness\n";
-    std::cout << "4. Canny Edge Detection\n";
-    std::cout << "5. Morphology Operations\n";
-    std::cout << "6. Resize Image\n";
-    std::cout << "7. Background Subtraction\n";
-    std::cout << "8. Launch GUI\n";
+    std::cout << "1. Panorama \n";
+    std::cout << "2. Face Detection \n";
+    std::cout << "3. Face Recognition \n";
+    std::cout << "4. Adjust Brightness\n";
+    std::cout << "5. Canny Edge Detection\n";
+    std::cout << "6. Morphology Operations\n";
+    std::cout << "7. Resize Image\n";
+    std::cout << "8. Background Subtraction\n";
+    std::cout << "9. Launch GUI\n";
     std::cout << "0. Exit\n";
     std::cout << "Choice: ";
 }
+
 
 void pauseAndReturn() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -38,7 +44,6 @@ void pauseAndReturn() {
 
 // === PANORAMA ===
 void runPanoramaIntegrated() {
-    std::vector<std::string> paths;
     int numImages;
     std::cout << "How many images? (2+): ";
     std::cin >> numImages;
@@ -49,6 +54,7 @@ void runPanoramaIntegrated() {
         return;
     }
 
+    std::vector<std::string> paths;
     for (int i = 0; i < numImages; ++i) {
         std::string path;
         std::cout << "Path to image " << (i + 1) << ": ";
@@ -56,35 +62,26 @@ void runPanoramaIntegrated() {
         paths.push_back(path);
     }
 
-    std::vector<cv::Mat> images;
-    for (const auto& path : paths) {
-        cv::Mat img = cv::imread(path);
-        if (img.empty()) {
-            std::cerr << "Failed to read: " << path << std::endl;
-            pauseAndReturn();
-            return;
-        }
-        images.push_back(img);
-    }
-
-    cv::Ptr<cv::Stitcher> stitcher = cv::Stitcher::create(cv::Stitcher::PANORAMA);
-    cv::Mat pano;
-    cv::Stitcher::Status status = stitcher->stitch(images, pano);
-
-    if (status == cv::Stitcher::ERR_NEED_MORE_IMGS) {
-        std::cerr << "Not enough overlap. Returning first image only.\n";
-        pano = images[0].clone();
-    } else if (status != cv::Stitcher::OK) {
-        std::cerr << "Stitching failed. Error code: " << int(status) << std::endl;
+    PanoramaStitcher stitcher;
+    if (!stitcher.loadImages(paths)) {
+        std::cerr << "Failed to load one or more images.\n";
         pauseAndReturn();
         return;
     }
 
-    cv::imshow("Panorama", pano);
-    cv::imwrite("images/output/panorama_result.jpg", pano);
+    if (!stitcher.createPanorama()) {
+        std::cerr << "Panorama creation failed.\n";
+        pauseAndReturn();
+        return;
+    }
+
+    const cv::Mat& result = stitcher.getPanorama();
+    cv::imshow("Panorama Result", result);
+    cv::imwrite("images/output/panorama_result.jpg", result);
     cv::waitKey(0);
     pauseAndReturn();
 }
+
 
 
 // === FACE DETECTION ===
@@ -95,49 +92,25 @@ void runFaceDetectionIntegrated() {
     std::cout << "Path to image: ";
     std::cin >> imagePath;
 
-    std::ifstream fs(cascadePath);
-    if (!fs.good()) {
-        std::cerr << "Cascade file not found: " << cascadePath << std::endl;
+    bool success = false;
+    cv::Mat result = FaceDetectionProcessor::detectFaces(
+        QString::fromStdString(cascadePath),
+        QString::fromStdString(imagePath),
+        success
+    );
+
+    if (!success) {
+        std::cerr << "Face detection failed.\n";
         pauseAndReturn();
         return;
     }
 
-    cv::CascadeClassifier faceCascade;
-    try {
-        if (!faceCascade.load(cascadePath)) {
-            std::cerr << "Failed to load cascade file.\n";
-            pauseAndReturn();
-            return;
-        }
-    } catch (const cv::Exception& e) {
-        std::cerr << "Exception while loading cascade: " << e.what() << std::endl;
-        pauseAndReturn();
-        return;
-    }
-
-    cv::Mat image = cv::imread(imagePath);
-    if (image.empty()) {
-        std::cerr << "Failed to load image.\n";
-        pauseAndReturn();
-        return;
-    }
-
-    cv::Mat gray;
-    cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
-    cv::equalizeHist(gray, gray);
-
-    std::vector<cv::Rect> faces;
-    faceCascade.detectMultiScale(gray, faces);
-
-    for (const auto& rect : faces) {
-        cv::rectangle(image, rect, cv::Scalar(0, 255, 0), 2);
-    }
-
-    cv::imshow("Faces Detected", image);
-    cv::imwrite("images/output/faces_detected.jpg", image);
+    cv::imshow("Faces Detected", result);
+    cv::imwrite("images/output/faces_detected.jpg", result);
     cv::waitKey(0);
     pauseAndReturn();
 }
+
 
 
 // === BRIGHTNESS ===
@@ -246,6 +219,38 @@ void runBackgroundSubtraction() {
     pauseAndReturn();
 }
 
+// === FACE RECOGNITION ===
+void runFaceRecognition() {
+    std::string datasetDir, probePath;
+
+    std::cout << "Path to dataset folder: ";
+    std::cin >> datasetDir;
+
+    std::cout << "Path to image to recognize: ";
+    std::cin >> probePath;
+
+    auto result = FaceRecognitionProcessor::recognizeFace(
+        QString::fromStdString(datasetDir),
+        QString::fromStdString(probePath)
+    );
+
+    if (!result.success) {
+        std::cerr << "Face recognition failed.\n";
+        pauseAndReturn();
+        return;
+    }
+
+    std::cout << "\n=== Face Recognition Result ===\n";
+    std::cout << "Recognized Person: " << result.subjectName << "\n";
+    std::cout << "Confidence: " << result.confidence << "\n";
+
+    cv::imshow("Recognized Face", result.image);
+    cv::imwrite("images/output/face_recognized.jpg", result.image);
+    cv::waitKey(0);
+    pauseAndReturn();
+}
+
+
 // === GUI ===
 void runGUI(int argc, char* argv[]) {
     QApplication app(argc, argv);
@@ -274,17 +279,18 @@ int main(int argc, char* argv[]) {
         switch (choice) {
             case 1: runPanoramaIntegrated(); break;
             case 2: runFaceDetectionIntegrated(); break;
-            case 3: adjustBrightness(); break;
-            case 4: detectEdges(); break;
-            case 5: applyMorphology(); break;
-            case 6: resizeImage(); break;
-            case 7: runBackgroundSubtraction(); break;
-            case 8: runGUI(argc, argv); break;
+            case 3: runFaceRecognition(); break;
+            case 4: adjustBrightness(); break;
+            case 5: detectEdges(); break;
+            case 6: applyMorphology(); break;
+            case 7: resizeImage(); break;
+            case 8: runBackgroundSubtraction(); break;
+            case 9: runGUI(argc, argv); break;
             case 0:
                 std::cout << "Goodbye!" << std::endl;
                 return 0;
             default:
-                std::cout << "Invalid choice. Please enter a valid number from the menu.\n";
+                std::cout << "Invalid choice. Please enter a valid number.\n";
         }
     }
 

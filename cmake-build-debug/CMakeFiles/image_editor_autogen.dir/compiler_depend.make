@@ -866,7 +866,10 @@ image_editor_autogen/timestamp: /Library/Developer/CommandLineTools/SDKs/MacOSX1
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.h \
@@ -1630,8 +1633,6 @@ image_editor_autogen/timestamp: /Library/Developer/CommandLineTools/SDKs/MacOSX1
 
 /opt/homebrew/lib/cmake/Qt6DBusPrivate/Qt6DBusPrivateConfigVersion.cmake:
 
-/opt/homebrew/lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake:
-
 /opt/homebrew/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake:
 
 /opt/homebrew/lib/cmake/Qt6DBus/Qt6DBusTargets-release.cmake:
@@ -2136,7 +2137,13 @@ image_editor_autogen/timestamp: /Library/Developer/CommandLineTools/SDKs/MacOSX1
 
 /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp:
 
+/opt/homebrew/lib/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake:
+
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp:
+
 /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp:
+
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp:
 
 /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qutf8stringview.h:
 
@@ -3379,6 +3386,8 @@ CMakeFiles/4.0.1/CMakeCXXCompiler.cmake:
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/sstream.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__condition_variable/condition_variable.h:
+
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__chrono/time_point.h:
 

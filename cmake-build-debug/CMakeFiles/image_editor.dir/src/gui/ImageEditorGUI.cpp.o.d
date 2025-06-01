@@ -1224,6 +1224,11 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/MorphologyProcessor.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/ResizeProcessor.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/BackgroundSubtractor.h \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/FaceDetectionProcessor.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QString \
+  /opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/FaceRecognitionProcessor.h \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/PanoramaStitcher.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QFileDialog \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qfiledialog.h \
   /opt/homebrew/include/QtCore/qdir.h \

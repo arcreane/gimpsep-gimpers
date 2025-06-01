@@ -504,17 +504,27 @@
 			null
 		],
 		[
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp",
+			"MU",
+			null
+		],
+		[
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp",
+			"MU",
+			null
+		],
+		[
 			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/MorphologyProcessor.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp",
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp",
 			"MU",
 			null
 		],
 		[
-			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/face_recognition.cpp",
+			"/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ResizeProcessor.cpp",
 			"MU",
 			null
 		]

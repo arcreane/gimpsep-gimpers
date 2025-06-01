@@ -5,6 +5,9 @@
 #include "../include/MorphologyProcessor.h"
 #include "../include/ResizeProcessor.h"
 #include "../include/BackgroundSubtractor.h"
+#include "../include/FaceDetectionProcessor.h"
+#include "../include/FaceRecognitionProcessor.h"
+#include "../include/PanoramaStitcher.h"
 
 #include <QFileDialog>
 #include <QPixmap>
@@ -22,7 +25,6 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     QVBoxLayout* sidePanel = new QVBoxLayout();
     sidePanel->setSpacing(15);
 
-    // === Image Display ===
     imageLabel = new QLabel;
     imageLabel->setAlignment(Qt::AlignCenter);
     imageLabel->setMinimumSize(600, 400);
@@ -41,13 +43,20 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     mainLayout->addLayout(sidePanel);
     setCentralWidget(centralWidget);
 
-    // === Buttons and Controls ===
     QPushButton* loadButton = new QPushButton("Open");
     saveButton = new QPushButton("Save");
     morphologyButton = new QPushButton("Morphology");
     resizeButton = new QPushButton("Resize");
     backgroundButton = new QPushButton("Background Subtraction");
+    faceDetectionButton = new QPushButton("Face Detection");
+    panoramaButton = new QPushButton("Panorama Stitching");
 
+    QPushButton* faceRecognitionButton = new QPushButton("Face Recognition");
+
+
+
+    faceDetectionButton->setEnabled(true);
+    panoramaButton->setEnabled(true);
     saveButton->setEnabled(false);
     morphologyButton->setEnabled(false);
     resizeButton->setEnabled(false);
@@ -56,7 +65,6 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     brightnessSlider->setRange(-100, 100);
     brightnessSlider->setValue(0);
     brightnessSlider->setEnabled(false);
-
     QLabel* brightnessLabel = new QLabel("Brightness");
 
     cannySlider = new QSlider(Qt::Horizontal);
@@ -77,10 +85,12 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     sidePanel->addWidget(resizeButton);
     sidePanel->addWidget(backgroundButton);
     sidePanel->addStretch();
+    sidePanel->addWidget(faceDetectionButton);
+    sidePanel->addWidget(panoramaButton);
+    sidePanel->addWidget(faceRecognitionButton);
 
     statusBar()->showMessage("Ready");
 
-    // === Connections ===
     connect(loadButton, &QPushButton::clicked, this, &ImageEditorGUI::loadImage);
     connect(saveButton, &QPushButton::clicked, this, &ImageEditorGUI::saveImage);
     connect(brightnessSlider, &QSlider::valueChanged, this, &ImageEditorGUI::adjustBrightness);
@@ -88,6 +98,10 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     connect(morphologyButton, &QPushButton::clicked, this, &ImageEditorGUI::applyMorphology);
     connect(resizeButton, &QPushButton::clicked, this, &ImageEditorGUI::resizeImage);
     connect(backgroundButton, &QPushButton::clicked, this, &ImageEditorGUI::runBackgroundSubtraction);
+    connect(faceDetectionButton, &QPushButton::clicked, this, &ImageEditorGUI::runFaceDetection);
+    connect(panoramaButton, &QPushButton::clicked, this, &ImageEditorGUI::runPanoramaStitching);
+    connect(faceRecognitionButton, &QPushButton::clicked, this, &ImageEditorGUI::runFaceRecognition);
+
 }
 
 void ImageEditorGUI::loadImage() {
@@ -177,6 +191,72 @@ void ImageEditorGUI::runBackgroundSubtraction() {
     BackgroundSubtractor::processVideo(inputPath.toStdString(), outputPath.toStdString());
     statusBar()->showMessage("Background subtraction completed. Output saved.");
 }
+
+void ImageEditorGUI::runFaceDetection() {
+    QString cascadePath = QFileDialog::getOpenFileName(this, "Select Haar Cascade XML", "", "XML Files (*.xml)");
+    if (cascadePath.isEmpty()) return;
+
+    QString imagePath = QFileDialog::getOpenFileName(this, "Select Image", "", "Images (*.png *.jpg *.jpeg *.bmp)");
+    if (imagePath.isEmpty()) return;
+
+    bool success = false;
+    cv::Mat result = FaceDetectionProcessor::detectFaces(cascadePath, imagePath, success);
+    if (!success) {
+        QMessageBox::warning(this, "Error", "Face detection failed.");
+        return;
+    }
+
+    currentImage = result;
+    updateDisplay(currentImage);
+    statusBar()->showMessage("Face detection completed.");
+}
+void ImageEditorGUI::runFaceRecognition() {
+    QString datasetDir = QFileDialog::getExistingDirectory(this, "Select Dataset Directory");
+    if (datasetDir.isEmpty()) return;
+
+    QString probePath = QFileDialog::getOpenFileName(this, "Select Image to Recognize", "", "Images (*.png *.jpg *.jpeg *.bmp)");
+    if (probePath.isEmpty()) return;
+
+    auto result = FaceRecognitionProcessor::recognizeFace(datasetDir, probePath);
+    if (!result.success) {
+        QMessageBox::warning(this, "Error", "Face recognition failed.");
+        return;
+    }
+
+    currentImage = result.image;
+    updateDisplay(currentImage);
+
+    QString message = QString("Recognized: %1\nConfidence: %2")
+                      .arg(QString::fromStdString(result.subjectName))
+                      .arg(result.confidence);
+    QMessageBox::information(this, "Recognition Result", message);
+    statusBar()->showMessage("Face recognition completed.");
+}
+
+
+void ImageEditorGUI::runPanoramaStitching() {
+    bool ok;
+    int numImages = QInputDialog::getInt(this, "Panorama", "Number of images:", 2, 2, 10, 1, &ok);
+    if (!ok) return;
+
+    std::vector<std::string> paths;
+    for (int i = 0; i < numImages; ++i) {
+        QString path = QFileDialog::getOpenFileName(this, QString("Select Image %1").arg(i + 1), "", "Images (*.png *.jpg *.jpeg *.bmp)");
+        if (path.isEmpty()) return;
+        paths.push_back(path.toStdString());
+    }
+
+    PanoramaStitcher stitcher;
+    if (!stitcher.loadImages(paths) || !stitcher.createPanorama()) {
+        QMessageBox::warning(this, "Error", "Panorama stitching failed.");
+        return;
+    }
+
+    currentImage = stitcher.getPanorama().clone();
+    updateDisplay(currentImage);
+    statusBar()->showMessage("Panorama created.");
+}
+
 
 void ImageEditorGUI::updateDisplay(const cv::Mat& image) {
     QImage qimg = cvMatToQImage(image);

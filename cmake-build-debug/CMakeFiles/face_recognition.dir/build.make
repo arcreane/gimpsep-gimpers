@@ -93,19 +93,19 @@ CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.s:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/face_recognition_autogen/mocs_compilation.cpp -o CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.s
 
-CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o: CMakeFiles/face_recognition.dir/flags.make
-CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/face_recognition.cpp
-CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o: CMakeFiles/face_recognition.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o -MF CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o.d -o CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/face_recognition.cpp
+CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o: CMakeFiles/face_recognition.dir/flags.make
+CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp
+CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o: CMakeFiles/face_recognition.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o -MF CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o.d -o CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp
 
-CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/face_recognition.cpp > CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.i
+CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp > CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.i
 
-CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/face_recognition.cpp -o CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.s
+CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp -o CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.s
 
 CMakeFiles/face_recognition.dir/src/core/BrightnessProcessor.cpp.o: CMakeFiles/face_recognition.dir/flags.make
 CMakeFiles/face_recognition.dir/src/core/BrightnessProcessor.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp
@@ -177,44 +177,78 @@ CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp -o CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.s
 
+CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o: CMakeFiles/face_recognition.dir/flags.make
+CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp
+CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o: CMakeFiles/face_recognition.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o -MF CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o.d -o CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp
+
+CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp > CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.i
+
+CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp -o CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.s
+
+CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o: CMakeFiles/face_recognition.dir/flags.make
+CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o: /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp
+CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o: CMakeFiles/face_recognition.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o -MF CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o.d -o CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o -c /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp
+
+CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp > CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.i
+
+CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp -o CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.s
+
 # Object files for target face_recognition
 face_recognition_OBJECTS = \
 "CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.o" \
-"CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o" \
+"CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o" \
 "CMakeFiles/face_recognition.dir/src/core/BrightnessProcessor.cpp.o" \
 "CMakeFiles/face_recognition.dir/src/core/EdgeDetector.cpp.o" \
 "CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.o" \
 "CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.o" \
-"CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.o"
+"CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.o" \
+"CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o" \
+"CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o"
 
 # External object files for target face_recognition
 face_recognition_EXTERNAL_OBJECTS =
 
 bin/face_recognition: CMakeFiles/face_recognition.dir/face_recognition_autogen/mocs_compilation.cpp.o
-bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/face_recognition.cpp.o
+bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/FaceRecognitionProcessor.cpp.o
 bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/BrightnessProcessor.cpp.o
 bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/EdgeDetector.cpp.o
 bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/ResizeProcessor.cpp.o
 bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/MorphologyProcessor.cpp.o
 bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/BackgroundSubtractor.cpp.o
+bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/PanoramaStitcher.cpp.o
+bin/face_recognition: CMakeFiles/face_recognition.dir/src/core/FaceDetectionProcessor.cpp.o
 bin/face_recognition: CMakeFiles/face_recognition.dir/build.make
 bin/face_recognition: /opt/homebrew/lib/libopencv_highgui.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_video.4.11.0.dylib
-bin/face_recognition: /opt/homebrew/lib/libopencv_objdetect.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_stitching.4.11.0.dylib
+bin/face_recognition: /opt/homebrew/lib/libopencv_face.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_videoio.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_imgcodecs.4.11.0.dylib
-bin/face_recognition: /opt/homebrew/lib/libopencv_dnn.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_xfeatures2d.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_ml.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_shape.4.11.0.dylib
+bin/face_recognition: /opt/homebrew/lib/libopencv_objdetect.4.11.0.dylib
+bin/face_recognition: /opt/homebrew/lib/libopencv_dnn.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_calib3d.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_features2d.4.11.0.dylib
-bin/face_recognition: /opt/homebrew/lib/libopencv_imgproc.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_flann.4.11.0.dylib
+bin/face_recognition: /opt/homebrew/lib/libopencv_photo.4.11.0.dylib
+bin/face_recognition: /opt/homebrew/lib/libopencv_imgproc.4.11.0.dylib
 bin/face_recognition: /opt/homebrew/lib/libopencv_core.4.11.0.dylib
 bin/face_recognition: CMakeFiles/face_recognition.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable bin/face_recognition"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable bin/face_recognition"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/face_recognition.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

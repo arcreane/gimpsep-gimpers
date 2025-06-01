@@ -10,7 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "panorama_autogen/timestamp" "custom" "panorama_autogen/deps"
   "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/cmake-build-debug/panorama_autogen/mocs_compilation.cpp" "CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/panorama.dir/panorama_autogen/mocs_compilation.cpp.o.d"
-  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/stitching.cpp" "CMakeFiles/panorama.dir/src/core/stitching.cpp.o" "gcc" "CMakeFiles/panorama.dir/src/core/stitching.cpp.o.d"
+  "/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/PanoramaStitcher.cpp" "CMakeFiles/panorama.dir/src/core/PanoramaStitcher.cpp.o" "gcc" "CMakeFiles/panorama.dir/src/core/PanoramaStitcher.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

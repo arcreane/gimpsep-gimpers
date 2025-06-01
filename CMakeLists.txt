@@ -7,7 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # === Find OpenCV ===
-find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui imgcodecs video objdetect stitching)
+# Ajout explicite de "face" dans les composants
+find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui imgcodecs video objdetect stitching face)
 
 # === Find Qt6 (for GUI) ===
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
@@ -37,6 +38,9 @@ set(COMMON_SRC
         src/core/ResizeProcessor.cpp
         src/core/MorphologyProcessor.cpp
         src/core/BackgroundSubtractor.cpp
+        src/core/PanoramaStitcher.cpp
+        src/core/FaceDetectionProcessor.cpp
+        src/core/FaceRecognitionProcessor.cpp
 )
 
 # === GUI logic ===
@@ -45,8 +49,8 @@ set(GUI_SRC
 )
 
 # === Executables ===
-add_executable(panorama src/core/stitching.cpp)
-add_executable(face_recognition src/core/face_recognition.cpp ${COMMON_SRC})
+add_executable(panorama src/core/PanoramaStitcher.cpp)
+add_executable(face_recognition src/core/FaceRecognitionProcessor.cpp ${COMMON_SRC})
 add_executable(image_editor src/main.cpp ${COMMON_SRC} ${GUI_SRC})
 
 # === Link libraries ===
