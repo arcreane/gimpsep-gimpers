@@ -1,70 +1,123 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <vector>
+#include "stitching.h"
 
 using namespace cv;
 using namespace std;
 
-int main(int argc, char** argv) {
-    if (argc < 3) {
-        cout << "Usage: " << argv[0] << " img1 img2 [img3 ...]" << endl;
-        return -1;
-    }
+StitcherSimple::StitcherSimple() : refHeight_(0) {}
 
-    // Lire toutes les images et vérifier qu'elles sont valides
-    vector<Mat> images;
-    for (int i = 1; i < argc; ++i) {
-        Mat img = imread(argv[i]);
+StitcherSimple::~StitcherSimple() {}
+
+bool StitcherSimple::loadImages(const std::vector<std::string>& imagePaths) {
+    images_.clear();
+    for (const auto& path : imagePaths) {
+        cv::Mat img = cv::imread(path);
         if (img.empty()) {
-            cerr << "Erreur de lecture de l'image: " << argv[i] << endl;
-            return -1;
+            std::cerr << "Erreur de lecture de l'image: " << path << std::endl;
+            return false;
         }
-        images.push_back(img);
+        images_.push_back(img);
     }
+    return true;
+}
 
-    // Déterminer la hauteur de référence : on prend la plus petite hauteur pour éviter de grossir
-    int minHeight = images[0].rows;
-    for (size_t i = 1; i < images.size(); ++i) {
-        minHeight = min(minHeight, images[i].rows);
+void StitcherSimple::computeReferenceHeight() {
+    if (images_.empty()) {
+        refHeight_ = 0;
+        return;
     }
+    refHeight_ = images_[0].rows;
+    for (const auto& img : images_) {
+        refHeight_ = std::min(refHeight_, img.rows);
+    }
+}
 
-    // Redimensionner chaque image pour qu'elle ait la même hauteur (minHeight),
-    // tout en conservant le ratio largeur/hauteur
-    vector<Mat> resized;
-    resized.reserve(images.size());
-    for (const Mat& img : images) {
-        if (img.rows != minHeight) {
-            double scale = static_cast<double>(minHeight) / img.rows;
+void StitcherSimple::resizeImages() {
+    resizedImages_.clear();
+    for (const auto& img : images_) {
+        if (img.rows != refHeight_) {
+            double scale = static_cast<double>(refHeight_) / img.rows;
             int newWidth = static_cast<int>(img.cols * scale);
-            Mat tmp;
-            resize(img, tmp, Size(newWidth, minHeight));
-            resized.push_back(tmp);
+            cv::Mat tmp;
+            cv::resize(img, tmp, cv::Size(newWidth, refHeight_));
+            resizedImages_.push_back(tmp);
         } else {
-            resized.push_back(img);
+            resizedImages_.push_back(img);
         }
     }
+}
 
-    // Calculer la largeur totale du panorama
+void StitcherSimple::stitchImages() {
+    if (resizedImages_.empty()) {
+        panorama_ = cv::Mat();
+        return;
+    }
     int totalWidth = 0;
-    for (const Mat& img : resized) {
+    for (const auto& img : resizedImages_) {
         totalWidth += img.cols;
     }
-
-    // Créer une image vide (noire) pour y coller toutes les images côte à côte
-    Mat panorama(minHeight, totalWidth, resized[0].type(), Scalar::all(0));
-
-    // Copier chaque image dans le panorama à la bonne position
+    panorama_ = cv::Mat(refHeight_, totalWidth, resizedImages_[0].type(), cv::Scalar::all(0));
     int offsetX = 0;
-    for (const Mat& img : resized) {
-        Mat roi = panorama(Rect(offsetX, 0, img.cols, img.rows));
+    for (const auto& img : resizedImages_) {
+        cv::Mat roi = panorama_(cv::Rect(offsetX, 0, img.cols, img.rows));
         img.copyTo(roi);
         offsetX += img.cols;
     }
+}
 
-    // Afficher et sauvegarder le résultat
-    imshow("Panorama brut", panorama);
-    imwrite("panorama_simple.jpg", panorama);
+bool StitcherSimple::createPanorama() {
+    if (images_.size() < 2) {
+        std::cerr << "Besoin d'au moins deux images pour créer un panorama." << std::endl;
+        return false;
+    }
+    computeReferenceHeight();
+    resizeImages();
+    stitchImages();
+    return !panorama_.empty();
+}
 
-    waitKey(0);
+void StitcherSimple::showPanorama(const std::string& windowName) const {
+    if (!panorama_.empty()) {
+        cv::imshow(windowName, panorama_);
+        cv::waitKey(0);
+    }
+}
+
+bool StitcherSimple::savePanorama(const std::string& outputPath) const {
+    if (panorama_.empty()) {
+        std::cerr << "Panorama vide, rien à sauvegarder." << std::endl;
+        return false;
+    }
+    return cv::imwrite(outputPath, panorama_);
+}
+
+// Fonction main pour utiliser la classe
+int main(int argc, char** argv) {
+    if (argc < 3) {
+        std::cout << "Usage: " << argv[0] << " img1 img2 [img3 ...]" << std::endl;
+        return -1;
+    }
+
+    std::vector<std::string> paths;
+    for (int i = 1; i < argc; ++i) {
+        paths.push_back(argv[i]);
+    }
+
+    StitcherSimple stitcher;
+    if (!stitcher.loadImages(paths)) {
+        return -1;
+    }
+
+    if (!stitcher.createPanorama()) {
+        return -1;
+    }
+
+    stitcher.showPanorama("Panorama OOP");
+    if (!stitcher.savePanorama("panorama_oop.jpg")) {
+        return -1;
+    }
+
     return 0;
 }
