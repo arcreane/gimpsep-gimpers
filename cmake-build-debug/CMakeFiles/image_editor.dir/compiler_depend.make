@@ -865,6 +865,7 @@ image_editor_autogen/timestamp: /Library/Developer/CommandLineTools/SDKs/MacOSX1
   image_editor_autogen/moc_predefs.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/CommonFunctions.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ConfigManager.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp \
@@ -13574,22 +13575,6 @@ CMakeFiles/image_editor.dir/src/main.cpp.o: /Users/inesmansour/Documents/GitHub/
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/nested_exception.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__exception/terminate.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_status.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perms.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/space_info.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/buffer.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/concepts.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__format/enable_insertable.h \
@@ -13976,9 +13961,7 @@ CMakeFiles/image_editor.dir/src/main.cpp.o: /Users/inesmansour/Documents/GitHub/
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/errno.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/exception \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/execution \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/functional \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/initializer_list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
@@ -14166,6 +14149,7 @@ CMakeFiles/image_editor.dir/src/main.cpp.o: /Users/inesmansour/Documents/GitHub/
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/BackgroundSubtractor.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/BrightnessProcessor.h \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/CommonFunctions.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/ConfigManager.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/EdgeDetector.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/FaceDetectionProcessor.h \
@@ -14507,8 +14491,6 @@ CMakeFiles/image_editor.dir/src/main.cpp.o: /Users/inesmansour/Documents/GitHub/
 /opt/homebrew/include/QtCore/qcoreapplication.h:
 
 /opt/homebrew/include/QtCore/qbasictimer.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/fstream:
 
 /opt/homebrew/lib/QtWidgets.framework/Headers/qgroupbox.h:
 
@@ -15785,12 +15767,6 @@ image_editor_autogen/MXUWEOXILK/moc_ImageEditorGUI.cpp:
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_adjacent_find.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/push_heap.h:
-
-/opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/q17memory.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/hash.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pstl_stable_sort.h:
 
 /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
 
@@ -17146,6 +17122,10 @@ image_editor_autogen/moc_predefs.h:
 
 /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/Availability.h:
+
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/CommonFunctions.cpp:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_move_backward.h:
 
 /opt/homebrew/lib/cmake/Qt6Core/Qt6QDarwinCalendarPermissionPluginAdditionalTargetInfo.cmake:
@@ -17379,6 +17359,8 @@ CMakeFiles/4.0.1/CMakeCCompiler.cmake:
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/replace_copy.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/string.h:
+
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/CommonFunctions.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__iterator/wrap_iter.h:
 
@@ -18376,6 +18358,12 @@ CMakeFiles/4.0.1/CMakeCCompiler.cmake:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/swap_allocator.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/pstl_stable_sort.h:
+
+/opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/q17memory.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/hash.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_stable_partition.h:
 
 /opt/homebrew/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
@@ -19303,8 +19291,6 @@ CMakeFiles/4.0.1/CMakeCCompiler.cmake:
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__type_traits/is_member_pointer.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__memory/allocate_at_least.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/Availability.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/pstl_transform.h:
 

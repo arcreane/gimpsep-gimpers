@@ -30,6 +30,7 @@ private slots:
     void runPanoramaStitching();
     void runFaceDetection();
     void runFaceRecognition();
+    void resetImage();
 
 private:
     void updateDisplay(const cv::Mat& image);
@@ -42,6 +43,7 @@ private:
     QLabel* matchedImageLabel;
 
     QPushButton* saveButton;
+    QPushButton* resetButton;
     QPushButton* morphologyButton;
     QPushButton* resizeButton;
     QSlider* brightnessSlider;

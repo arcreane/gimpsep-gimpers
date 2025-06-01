@@ -55,6 +55,8 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     QPushButton* faceRecognitionButton = new QPushButton("Face Recognition");
     QPushButton* panoramaButton = new QPushButton("Panorama");
     QPushButton* backgroundButton = new QPushButton("Background Subtraction");
+    QPushButton* resetButton = new QPushButton("Reset Image");
+
 
     morphologyButton = new QPushButton("Morphology");
     resizeButton = new QPushButton("Resize");
@@ -110,6 +112,8 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     sidePanel->addWidget(aiGroup);
     sidePanel->addWidget(videoGroup);
     sidePanel->addStretch();
+    sidePanel->addWidget(resetButton);
+
 
     // === Status Bar ===
     statusBar()->showMessage("Ready");
@@ -125,6 +129,8 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     connect(faceDetectionButton, &QPushButton::clicked, this, &ImageEditorGUI::runFaceDetection);
     connect(panoramaButton, &QPushButton::clicked, this, &ImageEditorGUI::runPanoramaStitching);
     connect(faceRecognitionButton, &QPushButton::clicked, this, &ImageEditorGUI::runFaceRecognition);
+    connect(resetButton, &QPushButton::clicked, this, &ImageEditorGUI::resetImage);
+
 }
 
 
@@ -146,6 +152,14 @@ void ImageEditorGUI::loadImage() {
     placeholderText->hide();
     statusBar()->showMessage("Image loaded");
 }
+void ImageEditorGUI::resetImage() {
+    if (originalImage.empty()) return;
+    currentImage = originalImage.clone();
+    updateDisplay(currentImage);
+    brightnessSlider->setValue(0);
+    cannySlider->setValue(100);
+    statusBar()->showMessage("Image reset to original.");
+}
 
 void ImageEditorGUI::saveImage() {
     if (currentImage.empty()) return;
@@ -158,13 +172,14 @@ void ImageEditorGUI::saveImage() {
 }
 
 void ImageEditorGUI::adjustBrightness(int value) {
-    if (originalImage.empty()) return;
-    currentImage = BrightnessProcessor::adjustBrightness(originalImage, value);
-    updateDisplay(currentImage);
+    if (currentImage.empty()) return;
+    cv::Mat result = BrightnessProcessor::adjustBrightness(currentImage, value);
+    updateDisplay(result);
 }
 
+
 void ImageEditorGUI::detectEdges(int threshold) {
-    if (originalImage.empty()) return;
+    if (currentImage.empty()) return;
     cv::Mat result = EdgeDetector::detectEdges(originalImage, threshold, threshold * 3);
     currentImage = result.clone();
     updateDisplay(result);

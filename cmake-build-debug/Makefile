@@ -359,6 +359,33 @@ src/core/BrightnessProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.s
 .PHONY : src/core/BrightnessProcessor.cpp.s
 
+src/core/CommonFunctions.o: src/core/CommonFunctions.cpp.o
+.PHONY : src/core/CommonFunctions.o
+
+# target to build an object file
+src/core/CommonFunctions.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/CommonFunctions.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/CommonFunctions.cpp.o
+.PHONY : src/core/CommonFunctions.cpp.o
+
+src/core/CommonFunctions.i: src/core/CommonFunctions.cpp.i
+.PHONY : src/core/CommonFunctions.i
+
+# target to preprocess a source file
+src/core/CommonFunctions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/CommonFunctions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/CommonFunctions.cpp.i
+.PHONY : src/core/CommonFunctions.cpp.i
+
+src/core/CommonFunctions.s: src/core/CommonFunctions.cpp.s
+.PHONY : src/core/CommonFunctions.s
+
+# target to generate assembly for a file
+src/core/CommonFunctions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/CommonFunctions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/CommonFunctions.cpp.s
+.PHONY : src/core/CommonFunctions.cpp.s
+
 src/core/ConfigManager.o: src/core/ConfigManager.cpp.o
 .PHONY : src/core/ConfigManager.o
 
@@ -631,6 +658,9 @@ help:
 	@echo "... src/core/BrightnessProcessor.o"
 	@echo "... src/core/BrightnessProcessor.i"
 	@echo "... src/core/BrightnessProcessor.s"
+	@echo "... src/core/CommonFunctions.o"
+	@echo "... src/core/CommonFunctions.i"
+	@echo "... src/core/CommonFunctions.s"
 	@echo "... src/core/ConfigManager.o"
 	@echo "... src/core/ConfigManager.i"
 	@echo "... src/core/ConfigManager.s"

@@ -43,6 +43,7 @@ set(COMMON_SRC
         src/core/FaceDetectionProcessor.cpp
         src/core/FaceRecognitionProcessor.cpp
         src/core/ConfigManager.cpp
+        src/core/CommonFunctions.cpp
 )
 
 # === GUI logic ===
