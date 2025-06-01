@@ -6,8 +6,7 @@
 
 class FaceDetectionProcessor {
 public:
-    // Renvoie une image annotée avec les visages détectés, ou une image vide en cas d'échec
-    static cv::Mat detectFaces(const QString& cascadePath, const QString& imagePath, bool& success);
+    static cv::Mat detectFaces(const QString& cascadePath, const cv::Mat& image, bool& success);
 };
 
 #endif // FACE_DETECTION_PROCESSOR_H

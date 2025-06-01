@@ -11,7 +11,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(OpenCV REQUIRED COMPONENTS core imgproc highgui imgcodecs video objdetect stitching face)
 
 # === Find Qt6 (for GUI) ===
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Core)
+
 
 # Enable Qt Meta-object compiler
 set(CMAKE_AUTOMOC ON)
@@ -41,6 +42,7 @@ set(COMMON_SRC
         src/core/PanoramaStitcher.cpp
         src/core/FaceDetectionProcessor.cpp
         src/core/FaceRecognitionProcessor.cpp
+        src/core/ConfigManager.cpp
 )
 
 # === GUI logic ===

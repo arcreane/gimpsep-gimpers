@@ -27,7 +27,7 @@ private slots:
     void applyMorphology();
     void resizeImage();
     void runBackgroundSubtraction();
-    void runPanoramaStitching();;
+    void runPanoramaStitching();
     void runFaceDetection();
     void runFaceRecognition();
 
@@ -35,9 +35,12 @@ private:
     void updateDisplay(const cv::Mat& image);
     QImage cvMatToQImage(const cv::Mat& mat);
     void updateControls(bool enable);
+    cv::Mat loadImageFromDialog();  // New helper function
 
     QLabel* imageLabel;
     QLabel* placeholderText;
+    QLabel* matchedImageLabel;
+
     QPushButton* saveButton;
     QPushButton* morphologyButton;
     QPushButton* resizeButton;
@@ -52,6 +55,3 @@ private:
 };
 
 #endif // IMAGEEDITORGUI_H
-
-
-

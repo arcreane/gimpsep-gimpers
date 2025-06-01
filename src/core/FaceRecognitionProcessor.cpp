@@ -4,10 +4,12 @@
 #include <sys/stat.h>
 #include <iostream>
 #include <map>
+#include <filesystem>  // C++17
 
 using namespace cv;
 using namespace cv::face;
 using namespace std;
+namespace fs = std::filesystem;
 
 static bool isDirectory(const string& path) {
     struct stat st;
@@ -32,12 +34,11 @@ static vector<string> listFiles(const string& dirPath) {
     return files;
 }
 
-FaceRecognitionProcessor::RecognitionResult FaceRecognitionProcessor::recognizeFace(const QString& datasetDirQt, const QString& probePathQt) {
+FaceRecognitionProcessor::RecognitionResult FaceRecognitionProcessor::recognizeFace(const QString& datasetDirQt, const cv::Mat& probeImage) {
     RecognitionResult result;
     result.success = false;
 
     string datasetDir = datasetDirQt.toStdString();
-    string probePath  = probePathQt.toStdString();
 
     vector<Mat> images;
     vector<int> labels;
@@ -45,66 +46,48 @@ FaceRecognitionProcessor::RecognitionResult FaceRecognitionProcessor::recognizeF
     map<int, string> labelNames;
     int nextLabel = 0;
 
-    DIR* root = opendir(datasetDir.c_str());
-    if (!root) return result;
+    for (const auto& filePath : listFiles(datasetDir)) {
+        string filename = fs::path(filePath).filename().string();             // e.g. 000008.jpg
+        string stem = fs::path(filePath).stem().string();                    // e.g. 000008 (no extension)
 
-    struct dirent* entry;
-    while ((entry = readdir(root)) != nullptr) {
-        string name = entry->d_name;
-        if (name == "." || name == "..") continue;
-        string fullPath = datasetDir + "/" + name;
-
-        if (isDirectory(fullPath)) {
-            string subject = name;
-            int lbl = nextLabel++;
-            labelMap[subject] = lbl;
-            labelNames[lbl] = subject;
-
-            for (auto& f : listFiles(fullPath)) {
-                Mat img = imread(f, IMREAD_GRAYSCALE);
-                if (!img.empty()) {
-                    images.push_back(img);
-                    labels.push_back(lbl);
-                }
-            }
+        int lbl;
+        if (labelMap.find(stem) == labelMap.end()) {
+            lbl = nextLabel++;
+            labelMap[stem] = lbl;
+            labelNames[lbl] = stem;
         } else {
-            size_t dot = name.find('.');
-            string subject = (dot != string::npos ? name.substr(0, dot) : name);
+            lbl = labelMap[stem];
+        }
 
-            int lbl;
-            auto it = labelMap.find(subject);
-            if (it == labelMap.end()) {
-                lbl = nextLabel++;
-                labelMap[subject] = lbl;
-                labelNames[lbl] = subject;
-            } else {
-                lbl = it->second;
-            }
-
-            Mat img = imread(fullPath, IMREAD_GRAYSCALE);
-            if (!img.empty()) {
-                images.push_back(img);
-                labels.push_back(lbl);
-            }
+        Mat img = imread(filePath, IMREAD_GRAYSCALE);
+        if (!img.empty()) {
+            images.push_back(img);
+            labels.push_back(lbl);
         }
     }
-    closedir(root);
 
-    if (images.empty()) return result;
+    if (images.empty()) {
+        cerr << "No training images found." << endl;
+        return result;
+    }
 
     Ptr<LBPHFaceRecognizer> model = LBPHFaceRecognizer::create();
     model->train(images, labels);
 
-    Mat probe = imread(probePath, IMREAD_GRAYSCALE);
-    if (probe.empty()) return result;
+    Mat probeGray;
+    if (probeImage.channels() == 3) {
+        cvtColor(probeImage, probeGray, COLOR_BGR2GRAY);
+    } else {
+        probeGray = probeImage.clone();
+    }
 
     int predicted = -1;
     double confidence = 0.0;
-    model->predict(probe, predicted, confidence);
+    model->predict(probeGray, predicted, confidence);
 
-    result.subjectName = labelNames[predicted];
+    result.subjectName = labelNames[predicted];  // e.g. "000008"
     result.confidence = confidence;
-    result.image = probe;
+    result.image = probeImage.clone();
     result.success = true;
 
     return result;

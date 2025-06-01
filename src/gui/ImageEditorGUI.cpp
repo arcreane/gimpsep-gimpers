@@ -8,6 +8,7 @@
 #include "../include/FaceDetectionProcessor.h"
 #include "../include/FaceRecognitionProcessor.h"
 #include "../include/PanoramaStitcher.h"
+#include "../include/ConfigManager.h"
 
 #include <QFileDialog>
 #include <QPixmap>
@@ -15,6 +16,7 @@
 #include <QStatusBar>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QGroupBox>
 
 ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     setWindowTitle("Image Editor - Gimpsep Gimpers");
@@ -29,11 +31,13 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     imageLabel->setAlignment(Qt::AlignCenter);
     imageLabel->setMinimumSize(600, 400);
 
+
+
     QScrollArea* scrollArea = new QScrollArea;
     scrollArea->setWidgetResizable(true);
     scrollArea->setWidget(imageLabel);
 
-    placeholderText = new QLabel("Please import your image using the 'Open' button.");
+    placeholderText = new QLabel("Please open an image using the 'Open Image' button.");
     placeholderText->setAlignment(Qt::AlignCenter);
     placeholderText->setStyleSheet("color: gray; font-size: 16px;");
     imageLabel->setLayout(new QVBoxLayout);
@@ -43,54 +47,74 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     mainLayout->addLayout(sidePanel);
     setCentralWidget(centralWidget);
 
-    QPushButton* loadButton = new QPushButton("Open");
-    saveButton = new QPushButton("Save");
+    // === Buttons ===
+    QPushButton* loadButton = new QPushButton("Open Image");
+    saveButton = new QPushButton("Save Image");
+
+    QPushButton* faceDetectionButton = new QPushButton("Face Detection");
+    QPushButton* faceRecognitionButton = new QPushButton("Face Recognition");
+    QPushButton* panoramaButton = new QPushButton("Panorama");
+    QPushButton* backgroundButton = new QPushButton("Background Subtraction");
+
     morphologyButton = new QPushButton("Morphology");
     resizeButton = new QPushButton("Resize");
-    backgroundButton = new QPushButton("Background Subtraction");
-    faceDetectionButton = new QPushButton("Face Detection");
-    panoramaButton = new QPushButton("Panorama Stitching");
 
-    QPushButton* faceRecognitionButton = new QPushButton("Face Recognition");
-
-
-
-    faceDetectionButton->setEnabled(true);
-    panoramaButton->setEnabled(true);
-    saveButton->setEnabled(false);
-    morphologyButton->setEnabled(false);
-    resizeButton->setEnabled(false);
-
+    // === Sliders ===
     brightnessSlider = new QSlider(Qt::Horizontal);
     brightnessSlider->setRange(-100, 100);
     brightnessSlider->setValue(0);
-    brightnessSlider->setEnabled(false);
     QLabel* brightnessLabel = new QLabel("Brightness");
 
     cannySlider = new QSlider(Qt::Horizontal);
     cannySlider->setRange(0, 255);
     cannySlider->setValue(100);
-    cannySlider->setEnabled(false);
-    QLabel* cannyLabel = new QLabel("Canny Edge");
+    QLabel* cannyLabel = new QLabel("Canny Edge Threshold");
 
+    // === Enable/Disable Initial State ===
+    saveButton->setEnabled(false);
+    brightnessSlider->setEnabled(false);
+    cannySlider->setEnabled(false);
+    morphologyButton->setEnabled(false);
+    resizeButton->setEnabled(false);
+
+    // === Group: Image Processing ===
+    QGroupBox* imageToolsGroup = new QGroupBox("Image Processing");
+    QVBoxLayout* imageToolsLayout = new QVBoxLayout;
+    imageToolsLayout->addWidget(brightnessLabel);
+    imageToolsLayout->addWidget(brightnessSlider);
+    imageToolsLayout->addWidget(cannyLabel);
+    imageToolsLayout->addWidget(cannySlider);
+    imageToolsLayout->addWidget(morphologyButton);
+    imageToolsLayout->addWidget(resizeButton);
+    imageToolsGroup->setLayout(imageToolsLayout);
+
+    // === Group: AI Features ===
+    QGroupBox* aiGroup = new QGroupBox("AI Features");
+    QVBoxLayout* aiLayout = new QVBoxLayout;
+    aiLayout->addWidget(faceDetectionButton);
+    aiLayout->addWidget(faceRecognitionButton);
+    aiLayout->addWidget(panoramaButton);
+    aiGroup->setLayout(aiLayout);
+
+    // === Group: Video ===
+    QGroupBox* videoGroup = new QGroupBox("Video");
+    QVBoxLayout* videoLayout = new QVBoxLayout;
+    videoLayout->addWidget(backgroundButton);
+    videoGroup->setLayout(videoLayout);
+
+    // === Side Panel Layout ===
     sidePanel->addWidget(loadButton);
     sidePanel->addWidget(saveButton);
-    sidePanel->addSpacing(20);
-    sidePanel->addWidget(brightnessLabel);
-    sidePanel->addWidget(brightnessSlider);
-    sidePanel->addWidget(cannyLabel);
-    sidePanel->addWidget(cannySlider);
-    sidePanel->addSpacing(20);
-    sidePanel->addWidget(morphologyButton);
-    sidePanel->addWidget(resizeButton);
-    sidePanel->addWidget(backgroundButton);
+    sidePanel->addSpacing(10);
+    sidePanel->addWidget(imageToolsGroup);
+    sidePanel->addWidget(aiGroup);
+    sidePanel->addWidget(videoGroup);
     sidePanel->addStretch();
-    sidePanel->addWidget(faceDetectionButton);
-    sidePanel->addWidget(panoramaButton);
-    sidePanel->addWidget(faceRecognitionButton);
 
+    // === Status Bar ===
     statusBar()->showMessage("Ready");
 
+    // === Connections ===
     connect(loadButton, &QPushButton::clicked, this, &ImageEditorGUI::loadImage);
     connect(saveButton, &QPushButton::clicked, this, &ImageEditorGUI::saveImage);
     connect(brightnessSlider, &QSlider::valueChanged, this, &ImageEditorGUI::adjustBrightness);
@@ -101,8 +125,8 @@ ImageEditorGUI::ImageEditorGUI(QWidget* parent) : QMainWindow(parent) {
     connect(faceDetectionButton, &QPushButton::clicked, this, &ImageEditorGUI::runFaceDetection);
     connect(panoramaButton, &QPushButton::clicked, this, &ImageEditorGUI::runPanoramaStitching);
     connect(faceRecognitionButton, &QPushButton::clicked, this, &ImageEditorGUI::runFaceRecognition);
-
 }
+
 
 void ImageEditorGUI::loadImage() {
     QString fileName = QFileDialog::getOpenFileName(this, "Open Image", "", "Images (*.png *.jpg *.jpeg *.bmp)");
@@ -193,16 +217,21 @@ void ImageEditorGUI::runBackgroundSubtraction() {
 }
 
 void ImageEditorGUI::runFaceDetection() {
-    QString cascadePath = QFileDialog::getOpenFileName(this, "Select Haar Cascade XML", "", "XML Files (*.xml)");
-    if (cascadePath.isEmpty()) return;
+    if (currentImage.empty()) {
+        QMessageBox::warning(this, "Error", "Please load an image first.");
+        return;
+    }
 
-    QString imagePath = QFileDialog::getOpenFileName(this, "Select Image", "", "Images (*.png *.jpg *.jpeg *.bmp)");
-    if (imagePath.isEmpty()) return;
+    QString cascadePath = ConfigManager::instance().getFaceCascadePath();
+    if (cascadePath.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Cascade path not configured.");
+        return;
+    }
 
     bool success = false;
-    cv::Mat result = FaceDetectionProcessor::detectFaces(cascadePath, imagePath, success);
+    cv::Mat result = FaceDetectionProcessor::detectFaces(cascadePath, currentImage, success);
     if (!success) {
-        QMessageBox::warning(this, "Error", "Face detection failed.");
+        QMessageBox::warning(this, "Info", "No faces detected.");
         return;
     }
 
@@ -210,14 +239,21 @@ void ImageEditorGUI::runFaceDetection() {
     updateDisplay(currentImage);
     statusBar()->showMessage("Face detection completed.");
 }
+
+
 void ImageEditorGUI::runFaceRecognition() {
-    QString datasetDir = QFileDialog::getExistingDirectory(this, "Select Dataset Directory");
-    if (datasetDir.isEmpty()) return;
+    if (currentImage.empty()) {
+        QMessageBox::warning(this, "Error", "Please load an image first.");
+        return;
+    }
 
-    QString probePath = QFileDialog::getOpenFileName(this, "Select Image to Recognize", "", "Images (*.png *.jpg *.jpeg *.bmp)");
-    if (probePath.isEmpty()) return;
+    QString datasetDir = ConfigManager::instance().getFaceDatasetPath();
+    if (datasetDir.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Dataset path not configured.");
+        return;
+    }
 
-    auto result = FaceRecognitionProcessor::recognizeFace(datasetDir, probePath);
+    auto result = FaceRecognitionProcessor::recognizeFace(datasetDir, currentImage);
     if (!result.success) {
         QMessageBox::warning(this, "Error", "Face recognition failed.");
         return;
@@ -231,7 +267,12 @@ void ImageEditorGUI::runFaceRecognition() {
                       .arg(result.confidence);
     QMessageBox::information(this, "Recognition Result", message);
     statusBar()->showMessage("Face recognition completed.");
+
+
 }
+
+
+
 
 
 void ImageEditorGUI::runPanoramaStitching() {

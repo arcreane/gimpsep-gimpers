@@ -1,10 +1,9 @@
-CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.cpp \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/ImageEditorGUI.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
-  /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h \
-  /opt/homebrew/include/QtGui/qtguiglobal.h \
+CMakeFiles/image_editor.dir/src/core/ConfigManager.cpp.o: \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ConfigManager.cpp \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/include/ConfigManager.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QString \
+  /opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
+  /opt/homebrew/include/QtCore/qchar.h \
   /opt/homebrew/include/QtCore/qglobal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/type_traits \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__assert \
@@ -797,14 +796,6 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /opt/homebrew/include/QtCore/qtresource.h \
   /opt/homebrew/include/QtCore/qttranslation.h \
   /opt/homebrew/include/QtCore/qversiontagging.h \
-  /opt/homebrew/include/QtGui/qtgui-config.h \
-  /opt/homebrew/include/QtGui/qtguiexports.h \
-  /opt/homebrew/include/QtWidgets/qtwidgets-config.h \
-  /opt/homebrew/include/QtWidgets/qtwidgetsexports.h \
-  /opt/homebrew/include/QtWidgets/qwidget.h \
-  /opt/homebrew/include/QtGui/qwindowdefs.h \
-  /opt/homebrew/include/QtCore/qobjectdefs.h \
-  /opt/homebrew/include/QtCore/qnamespace.h \
   /opt/homebrew/include/QtCore/qcompare.h \
   /opt/homebrew/include/QtCore/qstdlibdetection.h \
   /opt/homebrew/include/QtCore/qcomparehelpers.h \
@@ -939,15 +930,11 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_binary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/pointer_to_unary_function.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__functional/unary_negate.h \
-  /opt/homebrew/include/QtCore/qtmetamacros.h \
-  /opt/homebrew/include/QtCore/qobjectdefs_impl.h \
-  /opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
-  /opt/homebrew/include/QtCore/qobject.h \
-  /opt/homebrew/include/QtCore/qstring.h \
-  /opt/homebrew/include/QtCore/qchar.h \
   /opt/homebrew/include/QtCore/qstringview.h \
   /opt/homebrew/include/QtCore/qbytearray.h \
   /opt/homebrew/include/QtCore/qrefcount.h \
+  /opt/homebrew/include/QtCore/qnamespace.h \
+  /opt/homebrew/include/QtCore/qtmetamacros.h \
   /opt/homebrew/include/QtCore/qarraydata.h \
   /opt/homebrew/include/QtCore/qpair.h \
   /opt/homebrew/include/QtCore/qarraydatapointer.h \
@@ -967,9 +954,22 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /opt/homebrew/include/QtCore/qutf8stringview.h \
   /opt/homebrew/include/QtCore/qstringtokenizer.h \
   /opt/homebrew/include/QtCore/qstringbuilder.h \
+  /opt/homebrew/include/QtCore/qstring.h \
   /opt/homebrew/include/QtCore/qstringconverter.h \
   /opt/homebrew/include/QtCore/qstringconverter_base.h \
-  /opt/homebrew/include/QtCore/qlist.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QJsonObject \
+  /opt/homebrew/lib/QtCore.framework/Headers/qjsonobject.h \
+  /opt/homebrew/include/QtCore/qjsonvalue.h \
+  /opt/homebrew/include/QtCore/qcborvalue.h \
+  /opt/homebrew/include/QtCore/qcborcommon.h \
+  /opt/homebrew/include/QtCore/qobjectdefs.h \
+  /opt/homebrew/include/QtCore/qobjectdefs_impl.h \
+  /opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
+  /opt/homebrew/include/QtCore/qmetatype.h \
+  /opt/homebrew/include/QtCore/qdatastream.h \
+  /opt/homebrew/include/QtCore/qscopedpointer.h \
+  /opt/homebrew/include/QtCore/qiodevicebase.h \
+  /opt/homebrew/include/QtCore/qfloat16.h \
   /opt/homebrew/include/QtCore/qhashfunctions.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/numeric \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/accumulate.h \
@@ -984,17 +984,8 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/pstl_reduce.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_exclusive_scan.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__numeric/transform_inclusive_scan.h \
-  /opt/homebrew/include/QtCore/qiterator.h \
-  /opt/homebrew/include/QtCore/qbytearraylist.h \
-  /opt/homebrew/include/QtCore/qstringlist.h \
-  /opt/homebrew/include/QtCore/qalgorithms.h \
-  /opt/homebrew/include/QtCore/qstringmatcher.h \
-  /opt/homebrew/include/QtCore/qscopedpointer.h \
-  /opt/homebrew/include/QtCore/qmetatype.h \
-  /opt/homebrew/include/QtCore/qdatastream.h \
-  /opt/homebrew/include/QtCore/qiodevicebase.h \
-  /opt/homebrew/include/QtCore/qfloat16.h \
   /opt/homebrew/include/QtCore/qmath.h \
+  /opt/homebrew/include/QtCore/qalgorithms.h \
   /opt/homebrew/include/QtCore/qtformat_impl.h \
   /opt/homebrew/include/QtCore/qiterable.h \
   /opt/homebrew/include/QtCore/qmetacontainer.h \
@@ -1004,8 +995,16 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/list \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__tree \
-  /opt/homebrew/include/QtCore/qobject_impl.h \
-  /opt/homebrew/include/QtCore/qbindingstorage.h \
+  /opt/homebrew/include/QtCore/qdatetime.h \
+  /opt/homebrew/include/QtCore/qcalendar.h \
+  /opt/homebrew/include/QtCore/qlocale.h \
+  /opt/homebrew/include/QtCore/qvariant.h \
+  /opt/homebrew/include/QtCore/qdebug.h \
+  /opt/homebrew/include/QtCore/qtextstream.h \
+  /opt/homebrew/include/QtCore/qcontiguouscache.h \
+  /opt/homebrew/include/QtCore/qsharedpointer.h \
+  /opt/homebrew/include/QtCore/qshareddata.h \
+  /opt/homebrew/include/QtCore/qsharedpointer_impl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/chrono \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/calendar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/convert_to_tm.h \
@@ -1023,231 +1022,36 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/year_month_day.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/year_month_weekday.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__chrono/literals.h \
-  /opt/homebrew/include/QtCore/qmargins.h \
-  /opt/homebrew/include/QtCore/q23utility.h \
-  /opt/homebrew/include/QtCore/q20utility.h \
-  /opt/homebrew/include/QtGui/qaction.h \
-  /opt/homebrew/include/QtGui/qkeysequence.h \
-  /opt/homebrew/include/QtGui/qicon.h \
-  /opt/homebrew/include/QtCore/qsize.h \
-  /opt/homebrew/include/QtGui/qpixmap.h \
-  /opt/homebrew/include/QtGui/qpaintdevice.h \
-  /opt/homebrew/include/QtCore/qrect.h \
-  /opt/homebrew/include/QtCore/qpoint.h \
-  /opt/homebrew/include/QtGui/qcolor.h \
-  /opt/homebrew/include/QtGui/qrgb.h \
-  /opt/homebrew/include/QtGui/qrgba64.h \
-  /opt/homebrew/include/QtCore/qshareddata.h \
-  /opt/homebrew/include/QtGui/qimage.h \
-  /opt/homebrew/include/QtGui/qpixelformat.h \
-  /opt/homebrew/include/QtGui/qtransform.h \
-  /opt/homebrew/include/QtGui/qpolygon.h \
-  /opt/homebrew/include/QtGui/qregion.h \
-  /opt/homebrew/include/QtCore/qspan.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
-  /opt/homebrew/include/QtCore/q20iterator.h \
-  /opt/homebrew/include/QtCore/qline.h \
-  /opt/homebrew/include/QtCore/qvariant.h \
-  /opt/homebrew/include/QtCore/qdebug.h \
-  /opt/homebrew/include/QtCore/qtextstream.h \
-  /opt/homebrew/include/QtCore/qcontiguouscache.h \
-  /opt/homebrew/include/QtCore/qsharedpointer.h \
-  /opt/homebrew/include/QtCore/qsharedpointer_impl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/set \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/unordered_set \
+  /opt/homebrew/include/QtCore/qlist.h \
+  /opt/homebrew/include/QtCore/qiterator.h \
+  /opt/homebrew/include/QtCore/qbytearraylist.h \
+  /opt/homebrew/include/QtCore/qstringlist.h \
+  /opt/homebrew/include/QtCore/qstringmatcher.h \
   /opt/homebrew/include/QtCore/qmap.h \
   /opt/homebrew/include/QtCore/qshareddata_impl.h \
   /opt/homebrew/include/QtCore/qset.h \
   /opt/homebrew/include/QtCore/qhash.h \
   /opt/homebrew/include/QtCore/qvarlengtharray.h \
-  /opt/homebrew/include/QtGui/qpalette.h \
-  /opt/homebrew/include/QtGui/qbrush.h \
-  /opt/homebrew/include/QtGui/qfont.h \
-  /opt/homebrew/include/QtCore/qendian.h \
-  /opt/homebrew/include/QtGui/qfontmetrics.h \
-  /opt/homebrew/include/QtGui/qfontinfo.h \
-  /opt/homebrew/include/QtGui/qfontvariableaxis.h \
-  /opt/homebrew/include/QtWidgets/qsizepolicy.h \
-  /opt/homebrew/include/QtGui/qcursor.h \
-  /opt/homebrew/include/QtGui/qbitmap.h \
-  /opt/homebrew/include/QtWidgets/qtabwidget.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QLabel \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qlabel.h \
-  /opt/homebrew/include/QtWidgets/qframe.h \
-  /opt/homebrew/include/QtGui/qpicture.h \
-  /opt/homebrew/include/QtCore/qiodevice.h \
-  /opt/homebrew/include/QtGui/qtextdocument.h \
-  /opt/homebrew/include/QtCore/qurl.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QSlider \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qslider.h \
-  /opt/homebrew/include/QtWidgets/qabstractslider.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QPushButton \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qpushbutton.h \
-  /opt/homebrew/include/QtWidgets/qabstractbutton.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QVBoxLayout \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qboxlayout.h \
-  /opt/homebrew/include/QtWidgets/qlayout.h \
-  /opt/homebrew/include/QtWidgets/qlayoutitem.h \
-  /opt/homebrew/include/QtWidgets/qboxlayout.h \
-  /opt/homebrew/include/QtWidgets/qgridlayout.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QHBoxLayout \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QScrollArea \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qscrollarea.h \
-  /opt/homebrew/include/QtWidgets/qabstractscrollarea.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/opencv.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/opencv_modules.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cvdef.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/version.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/hal/interface.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/arm_neon.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/arm_bf16.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/base.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cvstd.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/neon_utils.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/vsx_utils.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/check.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/traits.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/matx.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/saturate.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/fast_math.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/matx.inl.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/types.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cfloat \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/float.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/mat.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/bufferpool.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/mat.inl.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/persistence.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/operations.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cvstd.inl.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/complex \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/sstream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/utility.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/optim.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/ovx.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/calib3d.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/features2d.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/miniflann.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/defines.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/config.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/affine.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/utils/logger.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/utils/logger.defines.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/utils/logtag.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/dnn.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/async.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/../dnn/version.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/dict.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/layer.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/dnn.inl.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/utils/inference_engine.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/dnn/utils/../dnn.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/flann_base.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/general.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/matrix.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/params.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/any.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/saving.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/nn_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/result_set.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/all_indices.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/kdtree_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/dynamic_bitset.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/dist.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/heap.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/allocator.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/random.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/kdtree_single_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/kmeans_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/logger.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/composite_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/linear_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/lsh_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/lsh_table.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/autotuned_index.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/ground_truth.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/index_testing.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/timer.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/flann/sampling.h \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/highgui.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/imgcodecs.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/videoio.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/imgproc.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/./imgproc/segmentation.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/ml.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/ml/ml.inl.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/aruco_detector.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/aruco_dictionary.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/aruco_board.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/graphical_code_detector.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/face.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/charuco_detector.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/objdetect/barcode.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/photo.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/warpers.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/warpers.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cuda.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cuda_types.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/core/cuda.inl.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/matchers.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/util.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/queue \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/deque \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/camera.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/stitching/detail/blenders.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/video.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/video/tracking.hpp \
-  /opt/homebrew/Cellar/opencv/4.11.0_1/include/opencv4/opencv2/video/background_segm.hpp \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/BrightnessProcessor.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/EdgeDetector.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/MorphologyProcessor.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/ResizeProcessor.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/BackgroundSubtractor.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/FaceDetectionProcessor.h \
-  /opt/homebrew/lib/QtCore.framework/Headers/QString \
-  /opt/homebrew/lib/QtCore.framework/Headers/qstring.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/FaceRecognitionProcessor.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/PanoramaStitcher.h \
-  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/gui/../include/ConfigManager.h \
-  /opt/homebrew/lib/QtCore.framework/Headers/QJsonObject \
-  /opt/homebrew/lib/QtCore.framework/Headers/qjsonobject.h \
-  /opt/homebrew/include/QtCore/qjsonvalue.h \
-  /opt/homebrew/include/QtCore/qcborvalue.h \
-  /opt/homebrew/include/QtCore/qcborcommon.h \
-  /opt/homebrew/include/QtCore/qdatetime.h \
-  /opt/homebrew/include/QtCore/qcalendar.h \
-  /opt/homebrew/include/QtCore/qlocale.h \
+  /opt/homebrew/include/QtCore/q23utility.h \
+  /opt/homebrew/include/QtCore/q20utility.h \
+  /opt/homebrew/include/QtCore/qobject.h \
+  /opt/homebrew/include/QtCore/qobject_impl.h \
+  /opt/homebrew/include/QtCore/qbindingstorage.h \
   /opt/homebrew/include/QtCore/qregularexpression.h \
+  /opt/homebrew/include/QtCore/qurl.h \
   /opt/homebrew/include/QtCore/quuid.h \
+  /opt/homebrew/include/QtCore/qendian.h \
   /opt/homebrew/include/QtCore/qjsondocument.h \
   /opt/homebrew/include/QtCore/qjsonparseerror.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QFileDialog \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qfiledialog.h \
-  /opt/homebrew/include/QtCore/qdir.h \
-  /opt/homebrew/include/QtCore/qdirlisting.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QFile \
+  /opt/homebrew/lib/QtCore.framework/Headers/qfile.h \
   /opt/homebrew/include/QtCore/qfiledevice.h \
-  /opt/homebrew/include/QtCore/qfile.h \
+  /opt/homebrew/include/QtCore/qiodevice.h \
+  /opt/homebrew/include/QtCore/qspan.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cassert \
+  /opt/homebrew/include/QtCore/q20iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
@@ -1257,6 +1061,10 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/ostream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/space_info.h \
@@ -1265,22 +1073,7 @@ CMakeFiles/image_editor.dir/src/gui/ImageEditorGUI.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__filesystem/u8path.h \
-  /opt/homebrew/include/QtCore/qfileinfo.h \
-  /opt/homebrew/include/QtCore/qtimezone.h \
-  /opt/homebrew/include/QtWidgets/qdialog.h \
-  /opt/homebrew/lib/QtGui.framework/Headers/QPixmap \
-  /opt/homebrew/lib/QtGui.framework/Headers/qpixmap.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QStatusBar \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qstatusbar.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QInputDialog \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qinputdialog.h \
-  /opt/homebrew/include/QtWidgets/qlineedit.h \
-  /opt/homebrew/include/QtGui/qtextcursor.h \
-  /opt/homebrew/include/QtGui/qtextformat.h \
-  /opt/homebrew/include/QtGui/qpen.h \
-  /opt/homebrew/include/QtGui/qtextoption.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
-  /opt/homebrew/include/QtWidgets/qdialogbuttonbox.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QGroupBox \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qgroupbox.h
+  /opt/homebrew/lib/QtCore.framework/Headers/QJsonDocument \
+  /opt/homebrew/lib/QtCore.framework/Headers/qjsondocument.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QDebug \
+  /opt/homebrew/lib/QtCore.framework/Headers/qdebug.h

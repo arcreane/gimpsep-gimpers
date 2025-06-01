@@ -359,6 +359,33 @@ src/core/BrightnessProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.s
 .PHONY : src/core/BrightnessProcessor.cpp.s
 
+src/core/ConfigManager.o: src/core/ConfigManager.cpp.o
+.PHONY : src/core/ConfigManager.o
+
+# target to build an object file
+src/core/ConfigManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ConfigManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ConfigManager.cpp.o
+.PHONY : src/core/ConfigManager.cpp.o
+
+src/core/ConfigManager.i: src/core/ConfigManager.cpp.i
+.PHONY : src/core/ConfigManager.i
+
+# target to preprocess a source file
+src/core/ConfigManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ConfigManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ConfigManager.cpp.i
+.PHONY : src/core/ConfigManager.cpp.i
+
+src/core/ConfigManager.s: src/core/ConfigManager.cpp.s
+.PHONY : src/core/ConfigManager.s
+
+# target to generate assembly for a file
+src/core/ConfigManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/face_recognition.dir/build.make CMakeFiles/face_recognition.dir/src/core/ConfigManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/image_editor.dir/build.make CMakeFiles/image_editor.dir/src/core/ConfigManager.cpp.s
+.PHONY : src/core/ConfigManager.cpp.s
+
 src/core/EdgeDetector.o: src/core/EdgeDetector.cpp.o
 .PHONY : src/core/EdgeDetector.o
 
@@ -604,6 +631,9 @@ help:
 	@echo "... src/core/BrightnessProcessor.o"
 	@echo "... src/core/BrightnessProcessor.i"
 	@echo "... src/core/BrightnessProcessor.s"
+	@echo "... src/core/ConfigManager.o"
+	@echo "... src/core/ConfigManager.i"
+	@echo "... src/core/ConfigManager.s"
 	@echo "... src/core/EdgeDetector.o"
 	@echo "... src/core/EdgeDetector.i"
 	@echo "... src/core/EdgeDetector.s"

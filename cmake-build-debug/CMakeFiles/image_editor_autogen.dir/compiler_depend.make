@@ -865,6 +865,7 @@ image_editor_autogen/timestamp: /Library/Developer/CommandLineTools/SDKs/MacOSX1
   image_editor_autogen/moc_predefs.h \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BackgroundSubtractor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/BrightnessProcessor.cpp \
+  /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ConfigManager.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/EdgeDetector.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceDetectionProcessor.cpp \
   /Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/FaceRecognitionProcessor.cpp \
@@ -3202,6 +3203,8 @@ CMakeFiles/4.0.1/CMakeCXXCompiler.cmake:
 /opt/homebrew/Cellar/qt/6.9.0/lib/QtCore.framework/Versions/A/Headers/qfunctionpointer.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__functional/bind_front.h:
+
+/Users/inesmansour/Documents/GitHub/gimpsep-gimpers/src/core/ConfigManager.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset:
 

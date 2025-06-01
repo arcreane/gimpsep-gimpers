@@ -1,10 +1,5 @@
-//
-// Created by Ines Mansour on 01/06/2025.
-//
-
 #ifndef FACERECOGNITIONPROCESSOR_H
 #define FACERECOGNITIONPROCESSOR_H
-
 
 #include <opencv2/opencv.hpp>
 #include <QString>
@@ -19,9 +14,12 @@ public:
         bool success;
     };
 
+    // Original version
     static RecognitionResult recognizeFace(const QString& datasetDir, const QString& probePath);
+
+    // New overload for GUI (uses current image)
+    static RecognitionResult recognizeFace(const QString& datasetDir, const cv::Mat& image);
+
 };
 
-
-
-#endif //FACERECOGNITIONPROCESSOR_H
+#endif // FACERECOGNITIONPROCESSOR_H

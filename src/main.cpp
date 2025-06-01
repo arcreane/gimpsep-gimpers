@@ -12,6 +12,9 @@
 #include "../include/BackgroundSubtractor.h"
 #include "../include/FaceRecognitionProcessor.h"
 #include "../include/FaceDetectionProcessor.h"
+#include "../include/ConfigManager.h"
+
+
 
 #include <QApplication>
 
@@ -86,18 +89,26 @@ void runPanoramaIntegrated() {
 
 // === FACE DETECTION ===
 void runFaceDetectionIntegrated() {
-    std::string cascadePath, imagePath;
-    std::cout << "Path to cascade XML: ";
-    std::cin >> cascadePath;
+    QString cascadePath = ConfigManager::instance().getFaceCascadePath();
+    if (cascadePath.isEmpty()) {
+        std::cerr << "Cascade path not configured.\n";
+        pauseAndReturn();
+        return;
+    }
+
+    std::string imagePath;
     std::cout << "Path to image: ";
     std::cin >> imagePath;
 
+    cv::Mat image = cv::imread(imagePath);
+    if (image.empty()) {
+        std::cerr << "Could not load image.\n";
+        pauseAndReturn();
+        return;
+    }
+
     bool success = false;
-    cv::Mat result = FaceDetectionProcessor::detectFaces(
-        QString::fromStdString(cascadePath),
-        QString::fromStdString(imagePath),
-        success
-    );
+    cv::Mat result = FaceDetectionProcessor::detectFaces(cascadePath, image, success);
 
     if (!success) {
         std::cerr << "Face detection failed.\n";
@@ -111,8 +122,43 @@ void runFaceDetectionIntegrated() {
     pauseAndReturn();
 }
 
+// === FACE RECOGNITION ===
+void runFaceRecognition() {
+    QString datasetDir = ConfigManager::instance().getFaceDatasetPath();
+    if (datasetDir.isEmpty()) {
+        std::cerr << "Dataset path not configured.\n";
+        pauseAndReturn();
+        return;
+    }
 
+    std::string probePath;
+    std::cout << "Path to image to recognize: ";
+    std::cin >> probePath;
 
+    cv::Mat probeImage = cv::imread(probePath, cv::IMREAD_GRAYSCALE);
+    if (probeImage.empty()) {
+        std::cerr << "Failed to load probe image.\n";
+        pauseAndReturn();
+        return;
+    }
+
+    auto result = FaceRecognitionProcessor::recognizeFace(datasetDir, probeImage);
+
+    if (!result.success) {
+        std::cerr << "Face recognition failed.\n";
+        pauseAndReturn();
+        return;
+    }
+
+    std::cout << "\n=== Face Recognition Result ===\n";
+    std::cout << "Recognized Person: " << result.subjectName << "\n";
+    std::cout << "Confidence: " << result.confidence << "\n";
+
+    cv::imshow("Recognized Face", result.image);
+    cv::imwrite("images/output/face_recognized.jpg", result.image);
+    cv::waitKey(0);
+    pauseAndReturn();
+}
 // === BRIGHTNESS ===
 void adjustBrightness() {
     std::string imagePath;
@@ -219,36 +265,7 @@ void runBackgroundSubtraction() {
     pauseAndReturn();
 }
 
-// === FACE RECOGNITION ===
-void runFaceRecognition() {
-    std::string datasetDir, probePath;
 
-    std::cout << "Path to dataset folder: ";
-    std::cin >> datasetDir;
-
-    std::cout << "Path to image to recognize: ";
-    std::cin >> probePath;
-
-    auto result = FaceRecognitionProcessor::recognizeFace(
-        QString::fromStdString(datasetDir),
-        QString::fromStdString(probePath)
-    );
-
-    if (!result.success) {
-        std::cerr << "Face recognition failed.\n";
-        pauseAndReturn();
-        return;
-    }
-
-    std::cout << "\n=== Face Recognition Result ===\n";
-    std::cout << "Recognized Person: " << result.subjectName << "\n";
-    std::cout << "Confidence: " << result.confidence << "\n";
-
-    cv::imshow("Recognized Face", result.image);
-    cv::imwrite("images/output/face_recognized.jpg", result.image);
-    cv::waitKey(0);
-    pauseAndReturn();
-}
 
 
 // === GUI ===
@@ -256,14 +273,20 @@ void runGUI(int argc, char* argv[]) {
     QApplication app(argc, argv);
     ImageEditorGUI window;
     window.resize(800, 600);
+
+
     window.show();
     app.exec();
 }
 
 // === MAIN ===
 int main(int argc, char* argv[]) {
-    int choice = -1;
 
+    if (!ConfigManager::instance().loadConfig("config.json")) {
+        std::cerr << "Failed to load configuration file (config.json).\n";
+        return 1;
+    }
+    int choice = -1;
     while (true) {
         #ifdef _WIN32
             system("cls");

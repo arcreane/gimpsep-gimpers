@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/image_editor.dir/src/core/BackgroundSubtractor.cpp.o.d"
   "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o"
   "CMakeFiles/image_editor.dir/src/core/BrightnessProcessor.cpp.o.d"
+  "CMakeFiles/image_editor.dir/src/core/ConfigManager.cpp.o"
+  "CMakeFiles/image_editor.dir/src/core/ConfigManager.cpp.o.d"
   "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o"
   "CMakeFiles/image_editor.dir/src/core/EdgeDetector.cpp.o.d"
   "CMakeFiles/image_editor.dir/src/core/FaceDetectionProcessor.cpp.o"
